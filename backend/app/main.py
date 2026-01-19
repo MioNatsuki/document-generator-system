@@ -1,4 +1,3 @@
-# Punto de entrada FastAPI 
 from fastapi import FastAPI, Request, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
@@ -9,6 +8,7 @@ from loguru import logger
 
 from .config import settings
 from .api.v1.auth import router as auth_router
+from .api.v1.projects import router as projects_router
 from .utils.logging import setup_logger
 
 # Configurar logger
@@ -21,14 +21,14 @@ async def lifespan(app: FastAPI):
     Manejo del ciclo de vida de la aplicación
     """
     # Startup
-    logger.info("🚀 Iniciando aplicación...")
-    logger.info(f"📦 Nombre: {settings.APP_NAME}")
-    logger.info(f"🌍 Entorno: {settings.ENVIRONMENT}")
+    logger.info("Iniciando aplicación...")
+    logger.info(f"Nombre: {settings.APP_NAME}")
+    logger.info(f"Entorno: {settings.ENVIRONMENT}")
     
     yield
     
     # Shutdown
-    logger.info("👋 Apagando aplicación...")
+    logger.info("Apagando aplicación...")
 
 
 # Crear aplicación FastAPI
@@ -70,16 +70,16 @@ async def log_requests(request: Request, call_next):
         response = await call_next(request)
         return response
     
-    logger.info(f"🌐 Request: {method} {url} | IP: {ip} | UA: {user_agent}")
+    logger.info(f"Request: {method} {url} | IP: {ip} | UA: {user_agent}")
     
     try:
         response = await call_next(request)
     except Exception as e:
-        logger.error(f"❌ Error procesando request: {str(e)}")
+        logger.error(f"Error procesando request: {str(e)}")
         raise
     
     process_time = time.time() - start_time
-    logger.info(f"✅ Response: {response.status_code} | Tiempo: {process_time:.3f}s")
+    logger.info(f"Response: {response.status_code} | Tiempo: {process_time:.3f}s")
     
     # Agregar header de tiempo de procesamiento
     response.headers["X-Process-Time"] = str(process_time)
@@ -93,7 +93,7 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
     """
     Manejo de errores de validación
     """
-    logger.warning(f"⚠️ Validación fallida: {exc.errors()}")
+    logger.warning(f"Validación fallida: {exc.errors()}")
     
     return JSONResponse(
         status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
@@ -106,7 +106,7 @@ async def global_exception_handler(request: Request, exc: Exception):
     """
     Manejo de excepciones globales
     """
-    logger.error(f"🔥 Error no manejado: {str(exc)}")
+    logger.error(f"Error no manejado: {str(exc)}")
     
     if settings.DEBUG:
         return JSONResponse(
@@ -122,6 +122,7 @@ async def global_exception_handler(request: Request, exc: Exception):
 
 # Routers
 app.include_router(auth_router, prefix="/api/v1/auth", tags=["autenticación"])
+app.include_router(projects_router, prefix="/api/v1/projects", tags=["proyectos"])
 
 
 # Endpoints básicos
@@ -131,7 +132,7 @@ async def root():
     Endpoint raíz
     """
     return {
-        "message": "Bienvenido al Sistema de Generación Automatizada de PDFs",
+        "message": "Iniciando el backend del Sistema de Generación Automatizada de Documentos PDF",
         "version": "1.0.0",
         "docs": "/docs" if settings.DEBUG else None
     }

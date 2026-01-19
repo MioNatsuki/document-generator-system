@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 from jose import JWTError, jwt
 
 from ..database import get_db
-from ..models import Usuario
+from ..models import Usuario, Proyecto, ProyectoUsuario
 from ..config import settings
 from ..auth import verify_token, get_current_user
 from ..utils.security import SecurityManager
@@ -68,7 +68,7 @@ def get_current_superadmin(
     if current_user.rol != "SUPERADMIN":
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
-            detail="Permisos insuficientes"
+            detail="Permisos insuficientes. Se requiere rol SUPERADMIN"
         )
     return current_user
 
@@ -82,7 +82,7 @@ def get_current_analista_or_higher(
     if current_user.rol not in ["SUPERADMIN", "ANALISTA"]:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
-            detail="Permisos insuficientes"
+            detail="Permisos insuficientes. Se requiere rol ANALISTA o SUPERADMIN"
         )
     return current_user
 
@@ -95,7 +95,7 @@ async def get_ip_address(request: Request) -> str:
     if request.headers.get("x-forwarded-for"):
         ip = request.headers["x-forwarded-for"].split(",")[0]
     else:
-        ip = request.client.host
+        ip = request.client.host if request.client else "0.0.0.0"
     
     return ip
 
@@ -115,11 +115,62 @@ def require_project_access(permission: str):
         project_id: int,
         current_user: Usuario = Depends(get_current_active_user),
         db: Session = Depends(get_db)
-    ) -> Usuario:
-        if not SecurityManager.check_project_access(db, current_user.id, project_id, permission):
+    ) -> bool:
+        """
+        Verifica acceso a proyecto específico
+        """
+        # Superadmin tiene acceso a todo
+        if current_user.rol == "SUPERADMIN":
+            return True
+        
+        # Verificar si el usuario está asignado al proyecto
+        project_user = db.query(ProyectoUsuario).filter(
+            ProyectoUsuario.usuario_id == current_user.id,
+            ProyectoUsuario.proyecto_id == project_id
+        ).first()
+        
+        if not project_user:
             raise HTTPException(
                 status_code=status.HTTP_403_FORBIDDEN,
                 detail="No tienes acceso a este proyecto"
             )
-        return current_user
+        
+        # Verificar permiso específico según rol en proyecto
+        if permission == "view":
+            # Todos los roles pueden ver
+            return True
+        elif permission == "manage_templates":
+            return project_user.rol_en_proyecto in ["SUPERADMIN", "ANALISTA"]
+        elif permission == "manage_padron":
+            return project_user.rol_en_proyecto in ["SUPERADMIN", "ANALISTA"]
+        elif permission == "generate_pdfs":
+            return True  # Todos los roles pueden generar PDFs
+        elif permission == "view_stats":
+            if project_user.rol_en_proyecto == "AUXILIAR":
+                # Auxiliar solo puede ver sus propias estadísticas
+                return False
+            return True
+        
+        return False
     return dependency
+
+
+def get_project(
+    project_id: int,
+    db: Session = Depends(get_db)
+) -> Proyecto:
+    """
+    Obtiene proyecto y verifica que exista y no esté eliminado
+    """
+    proyecto = db.query(Proyecto).filter(
+        Proyecto.id == project_id,
+        Proyecto.is_deleted == False
+    ).first()
+    
+    if not proyecto:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Proyecto no encontrado"
+        )
+    
+    return proyecto

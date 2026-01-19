@@ -15,13 +15,30 @@ Sistema completo de gestión y generación automatizada de documentos PDF person
 - **Seguridad robusta**: bcrypt, validación de inputs, rate limiting
 - **Logging estructurado** con Loguru
 
-### 🚀 Próximas Partes
-- Gestión de proyectos con tablas dinámicas
-- Upload y validación de CSVs
-- Sistema de plantillas con editor visual
-- Motor de emisión de PDFs con códigos de barras
-- Dashboard y estadísticas por rol
-- Optimización de performance
+## 🎯 Características Implementadas en la Parte 2
+
+### ✅ Gestión de Proyectos con Tablas Dinámicas
+- **CRUD completo de proyectos** con wizard de 3 pasos
+- **Creación automática de tablas dinámicas** en PostgreSQL para cada proyecto
+- **Configuración de estructura del padrón** con tipos de datos personalizados
+- **Soft delete** de proyectos manteniendo integridad referencial
+
+### ✅ Upload y Validación de CSVs
+- **Carga de archivos CSV** para inicialización y actualización del padrón
+- **Validación de estructura** contra definición del proyecto
+- **Procesamiento de datos** con opciones de merge o reemplazo
+- **Validación de tamaño y formato** de archivos
+
+### ✅ Sistema de Permisos por Proyecto
+- **Asignación de usuarios** a proyectos con roles específicos
+- **Control de acceso** granular por funcionalidad
+- **Interface adaptativa** según rol del usuario
+
+### ✅ Interfaz de Usuario Completa
+- **Dashboard principal** con navegación por roles
+- **Ventana de proyecto** con pestañas organizadas
+- **Wizard intuitivo** para creación de proyectos
+- **Paleta de colores Madolche/Yummies** aplicada consistentemente
 
 ## 🛠️ Stack Tecnológico
 
@@ -43,5 +60,3 @@ Sistema completo de gestión y generación automatizada de documentos PDF person
 - **PyQt6** - Interfaz de escritorio
 - **Paleta de colores personalizada** - Estilo Madolche/Yummies
 - **Widgets customizados** para mejor UX
-
-## 📁 Estructura del Proyecto
