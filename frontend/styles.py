@@ -350,6 +350,88 @@ class Styles:
             border-color: {config.COLORS['color5']};
         }}
         """
+    
+    @staticmethod
+    def get_dashboard_style() -> str:
+        """Estilo específico para dashboard"""
+        return f"""
+        /* Dashboard specific styles */
+        QFrame.kpi-card {{
+            background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                stop:0 rgba(171, 228, 255, 0.1),
+                stop:1 rgba(255, 255, 255, 0.3));
+            border: 2px solid {config.COLORS['color4']};
+            border-radius: 15px;
+            padding: 20px;
+        }}
+        
+        QLabel.kpi-value {{
+            font-size: 32px;
+            font-weight: bold;
+            color: {config.COLORS['primary']};
+        }}
+        
+        QLabel.kpi-title {{
+            font-size: 14px;
+            font-weight: bold;
+            color: {config.COLORS['dark']};
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }}
+        
+        QComboBox.filter-combo {{
+            min-height: 30px;
+            padding: 5px 10px;
+            background-color: white;
+            border: 2px solid {config.COLORS['color2']};
+            border-radius: 8px;
+        }}
+        
+        QDateEdit.filter-date {{
+            min-height: 30px;
+            padding: 5px;
+            background-color: white;
+            border: 2px solid {config.COLORS['color2']};
+            border-radius: 8px;
+        }}
+        
+        /* Table styling for dashboard */
+        QTableWidget.dashboard-table {{
+            alternate-background-color: {config.COLORS['color3']}10;
+            selection-background-color: {config.COLORS['color4']}40;
+        }}
+        
+        QTableWidget.dashboard-table::item {{
+            padding: 8px;
+        }}
+        
+        /* Chart containers */
+        QWidget.chart-container {{
+            background-color: white;
+            border: 2px solid {config.COLORS['color1']}40;
+            border-radius: 10px;
+            padding: 10px;
+        }}
+        
+        /* Navigation buttons */
+        QPushButton.nav-button {{
+            background-color: {config.COLORS['color4']};
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 15px;
+            font-weight: bold;
+        }}
+        
+        QPushButton.nav-button:hover {{
+            background-color: {config.COLORS['color5']};
+        }}
+        
+        QPushButton.nav-button:disabled {{
+            background-color: #cccccc;
+            color: #666666;
+        }}
+        """
 
 
 # Instancia global de estilos
