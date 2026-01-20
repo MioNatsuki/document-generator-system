@@ -332,8 +332,9 @@ class ProjectWindow(QMainWindow):
         
         # Pestaña de Plantillas (solo para superadmin y analista)
         if self.user_info['rol'] in ['SUPERADMIN', 'ANALISTA']:
-            self.templates_tab = self.create_templates_tab()
-            self.tabs.addTab(self.templates_tab, "📄 Plantillas")
+            from ..views.templates_view import TemplatesView
+            self.templates_view = TemplatesView(self.project, self.user_info)
+            self.tabs.addTab(self.templates_view, "📄 Plantillas")
         
         # Pestaña de Emisión (todos los roles)
         self.emission_tab = self.create_emission_tab()

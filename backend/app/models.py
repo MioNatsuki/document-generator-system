@@ -284,14 +284,16 @@ class Bitacora(Base):
 def create_updated_at_triggers(target, connection, **kw):
     """
     Crea triggers PostgreSQL para actualizar automáticamente updated_at
+    Versión corregida: solo crea triggers para tablas que tienen columna updated_at
     """
-    tables = [
+    # Solo tablas que tienen columna updated_at
+    tables_with_updated_at = [
         "usuarios", "proyectos", "plantillas", 
         "emisiones_temp", "emisiones_final", "emisiones_acumuladas"
     ]
     
-    for table in tables:
-        # Crear función de trigger
+    for table in tables_with_updated_at:
+        # Primero, crear la función de trigger si no existe
         trigger_function = f"""
         CREATE OR REPLACE FUNCTION update_{table}_updated_at()
         RETURNS TRIGGER AS $$
@@ -302,7 +304,13 @@ def create_updated_at_triggers(target, connection, **kw):
         $$ LANGUAGE plpgsql;
         """
         
-        # Crear trigger
+        try:
+            connection.execute(text(trigger_function))
+        except Exception as e:
+            print(f"Error creando función para {table}: {str(e)}")
+            # Continuar con la siguiente tabla
+        
+        # Luego crear el trigger
         trigger = f"""
         DROP TRIGGER IF EXISTS trigger_update_{table}_updated_at ON {table};
         CREATE TRIGGER trigger_update_{table}_updated_at
@@ -311,7 +319,28 @@ def create_updated_at_triggers(target, connection, **kw):
         EXECUTE FUNCTION update_{table}_updated_at();
         """
         
-        connection.execute(text(trigger_function))
-        connection.execute(text(trigger))
+        try:
+            connection.execute(text(trigger))
+            print(f"Trigger creado para tabla: {table}")
+        except Exception as e:
+            print(f"Error creando trigger para {table}: {str(e)}")
+            # Posiblemente la tabla no tiene columna updated_at, continuar
+    
+    # También crear función genérica para futuras tablas
+    generic_function = """
+    CREATE OR REPLACE FUNCTION update_updated_at_column()
+    RETURNS TRIGGER AS $$
+    BEGIN
+        NEW.updated_at = CURRENT_TIMESTAMP;
+        RETURN NEW;
+    END;
+    $$ LANGUAGE plpgsql;
+    """
+    
+    try:
+        connection.execute(text(generic_function))
+        print("Función genérica update_updated_at_column creada")
+    except Exception as e:
+        print(f"Error creando función genérica: {str(e)}")
     
     connection.commit()

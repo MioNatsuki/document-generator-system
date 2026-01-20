@@ -317,6 +317,63 @@ class APIClient:
         """Obtener información del sistema"""
         return self._request("GET", "/info")
 
+    def crear_plantilla(self, proyecto_id: int, nombre: str, descripcion: Optional[str], 
+                       archivo_docx: Optional[str], mapeos_json: str) -> Dict[str, Any]:
+        """Crear nueva plantilla"""
+        if archivo_docx:
+            with open(archivo_docx, 'rb') as f:
+                files = {'archivo_docx': f}
+                data = {
+                    'nombre': nombre,
+                    'descripcion': descripcion or '',
+                    'mapeos_json': mapeos_json
+                }
+                
+                return self._request(
+                    "POST",
+                    f"/api/v1/templates/?proyecto_id={proyecto_id}",
+                    files=files,
+                    data=data
+                )
+        else:
+            return self._request(
+                "POST",
+                f"/api/v1/templates/?proyecto_id={proyecto_id}",
+                json={
+                    'nombre': nombre,
+                    'descripcion': descripcion,
+                    'mapeos_json': mapeos_json
+                }
+            )
+    
+    def listar_plantillas(self, proyecto_id: int, skip: int = 0, limit: int = 100) -> Dict[str, Any]:
+        """Listar plantillas de un proyecto"""
+        params = {"skip": skip, "limit": limit}
+        return self._request("GET", f"/api/v1/templates/?proyecto_id={proyecto_id}", params=params)
+    
+    def obtener_plantilla(self, plantilla_id: int) -> Dict[str, Any]:
+        """Obtener plantilla por ID"""
+        return self._request("GET", f"/api/v1/templates/{plantilla_id}")
+    
+    def actualizar_plantilla(self, plantilla_id: int, **kwargs) -> Dict[str, Any]:
+        """Actualizar plantilla"""
+        return self._request("PUT", f"/api/v1/templates/{plantilla_id}", json=kwargs)
+    
+    def eliminar_plantilla(self, plantilla_id: int) -> Dict[str, Any]:
+        """Eliminar plantilla"""
+        return self._request("DELETE", f"/api/v1/templates/{plantilla_id}")
+    
+    def obtener_preview_plantilla(self, plantilla_id: int) -> bytes:
+        """Obtener PDF de vista previa de la plantilla"""
+        url = urljoin(self.base_url, f"/api/v1/templates/{plantilla_id}/preview")
+        response = self.session.get(url)
+        response.raise_for_status()
+        return response.content
+    
+    def generar_preview_con_datos(self, plantilla_id: int, cuenta: Optional[str] = None) -> Dict[str, Any]:
+        """Generar preview con datos reales"""
+        params = {"cuenta": cuenta} if cuenta else {}
+        return self._request("POST", f"/api/v1/templates/{plantilla_id}/preview-data", params=params)
 
 # Instancia global del cliente
 api_client = APIClient()
