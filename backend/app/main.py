@@ -11,6 +11,7 @@ from .api.v1.auth import router as auth_router
 from .api.v1.projects import router as projects_router
 from .utils.logging import setup_logger
 from .api.v1.templates import router as templates_router
+from .api.v1.emissions import router as emissions_router
 
 # Configurar logger
 setup_logger("app")
@@ -125,6 +126,7 @@ async def global_exception_handler(request: Request, exc: Exception):
 app.include_router(auth_router, prefix="/api/v1/auth", tags=["autenticación"])
 app.include_router(projects_router, prefix="/api/v1/projects", tags=["proyectos"])
 app.include_router(templates_router, prefix="/api/v1/templates", tags=["plantillas"])
+app.include_router(emissions_router, prefix="/api/v1/emissions", tags=["emisiones"])
 
 
 # Endpoints básicos
