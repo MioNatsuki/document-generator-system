@@ -20,10 +20,10 @@ import pandas as pd
 from pathlib import Path
 import tempfile
 
-from ..config import config
-from ..styles import styles
-from ..utils.api_client import api_client, APIError
-from ..utils.file_dialogs import FileDialog
+from config import config
+from styles import styles
+from utils.api_client import api_client, APIError
+from utils.file_dialogs import FileDialog
 
 
 class ProjectWindow(QMainWindow):

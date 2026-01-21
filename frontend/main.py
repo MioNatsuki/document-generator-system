@@ -6,11 +6,11 @@ from PyQt6.QtGui import QPixmap, QFont, QColor
 import logging
 import traceback
 
-from .config import config
-from .styles import styles
-from .widgets.login_window import LoginWindow
-from .widgets.dashboard_window import DashboardWindow
-from .utils.api_client import api_client, APIError
+from config import config
+from styles import styles
+from widgets.login_window import LoginWindow
+from widgets.dashboard_window import DashboardWindow
+from utils.api_client import api_client, APIError
 
 
 class PDFGeneratorApp:

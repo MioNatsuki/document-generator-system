@@ -19,9 +19,9 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-from ..config import config
-from ..styles import styles
-from ..utils.api_client import api_client, APIError
+from config import config
+from styles import styles
+from utils.api_client import api_client, APIError
 
 
 class EmissionWorker(QThread):

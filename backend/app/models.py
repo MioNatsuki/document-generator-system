@@ -10,6 +10,7 @@ from sqlalchemy.orm import relationship, validates
 from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy.dialects.postgresql import UUID
 import uuid
+from uuid import uuid4
 from datetime import datetime
 
 from .database import Base
@@ -71,7 +72,7 @@ class Proyecto(Base):
     descripcion = Column(Text)
     logo_url = Column(String(500))
     nombre_tabla_padron = Column(String(100), unique=True, nullable=False)  # Ej: padron_completo_proyecto1
-    uuid_padron = Column(UUID(as_uuid=True), unique=True, default=uuid.uuid4)
+    uuid_padron = Column(UUID(as_uuid=True), unique=True, default=uuid4)
     estructura_padron = Column(JSON, nullable=False)  # {"columnas": [{"nombre": "cuenta", "tipo": "VARCHAR(50)"}, ...]}
     is_deleted = Column(Boolean, default=False, index=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())

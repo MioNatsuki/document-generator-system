@@ -6,7 +6,7 @@ from urllib.parse import urljoin
 from datetime import datetime
 import logging
 
-from ..config import config
+from config import config
 
 
 class APIError(Exception):

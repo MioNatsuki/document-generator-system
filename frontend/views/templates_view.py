@@ -13,10 +13,10 @@ from PyQt6.QtGui import QAction, QFont, QIcon, QColor, QPixmap
 import json
 import os
 
-from ..config import config
-from ..styles import styles
-from ..utils.api_client import api_client, APIError
-from ..widgets.template_editor import TemplateEditor
+from config import config
+from styles import styles
+from utils.api_client import api_client, APIError
+from widgets.template_editor import TemplateEditor
 
 
 class TemplatesView(QWidget):

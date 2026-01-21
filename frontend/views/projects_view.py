@@ -15,11 +15,10 @@ from pathlib import Path
 import tempfile
 import os
 
-from ..config import config
-from ..styles import styles
-from ..utils.api_client import api_client, APIError
-from ..utils.file_dialogs import FileDialog
-
+from config import config
+from styles import styles
+from utils.api_client import api_client, APIError
+from utils.file_dialogs import FileDialog
 
 class NewProjectWizard(QWizard):
     """Asistente para crear nuevo proyecto"""

@@ -2,9 +2,9 @@
 Widgets personalizados
 """
 
-from .dashboard_window import DashboardWindow
-from .kpi_card import KPICard
-from .charts import LineChartWidget, PieChartWidget, BarChartWidget
+from widgets.dashboard_window import DashboardWindow
+from widgets.kpi_card import KPICard
+from widgets.charts import LineChartWidget, PieChartWidget, BarChartWidget
 
 __all__ = [
     'DashboardWindow',

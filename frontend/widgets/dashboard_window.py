@@ -23,9 +23,9 @@ import csv
 from io import StringIO
 import logging
 
-from ..config import config
-from ..styles import styles
-from ..utils.api_client import api_client, APIError
+from config import config
+from styles import styles
+from utils.api_client import api_client, APIError
 from .kpi_card import KPICard
 from .charts import LineChartWidget, PieChartWidget, BarChartWidget
 

@@ -10,9 +10,9 @@ from PyQt6.QtGui import QFont, QPixmap, QIcon
 import sys
 import os
 
-from ..config import config
-from ..styles import styles
-from ..utils.api_client import api_client, APIError
+from config import config
+from styles import styles
+from utils.api_client import api_client, APIError
 
 
 class LoginWindow(QWidget):

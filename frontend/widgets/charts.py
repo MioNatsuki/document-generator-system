@@ -10,8 +10,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 from datetime import datetime
 
-from ..config import config
-from ..styles import styles
+from config import config
+from styles import styles
 
 
 class ChartWidget(QWidget):

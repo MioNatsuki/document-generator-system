@@ -5,7 +5,7 @@ from PyQt6.QtWidgets import QFrame, QVBoxLayout, QHBoxLayout, QLabel
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QFont
 
-from ..config import config
+from config import config
 
 
 class KPICard(QFrame):

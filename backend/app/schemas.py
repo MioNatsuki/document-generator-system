@@ -114,7 +114,7 @@ class ProyectoBase(BaseModel):
 
 class ColumnaPadron(BaseModel):
     nombre: str = Field(..., min_length=1, max_length=100)
-    tipo: str = Field(..., regex=r'^(VARCHAR\(\d+\)|INT|DECIMAL\(\d+,\d+\)|DATE|TEXT|BOOLEAN)$')
+    tipo: str = Field(..., pattern=r'^(VARCHAR\(\d+\)|INT|DECIMAL\(\d+,\d+\)|DATE|TEXT|BOOLEAN)$')
     es_obligatorio: bool = False
     es_unico: bool = False
 
@@ -221,8 +221,8 @@ class EmisionCSVData(BaseModel):
 
 class EmisionRequest(BaseModel):
     plantilla_id: int
-    documento: str = Field(..., regex=r'^(Notificación|Apercibimiento|Embargo|Carta Invitación)$')
-    pmo: str = Field(..., regex=r'^PMO \d+$')
+    documento: str = Field(..., pattern=r'^(Notificación|Apercibimiento|Embargo|Carta Invitación)$')
+    pmo: str = Field(..., pattern=r'^PMO \d+$')
     fecha_emision: datetime
     datos: List[EmisionCSVData]
     ruta_salida: Optional[str] = None
