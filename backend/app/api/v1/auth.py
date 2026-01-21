@@ -30,9 +30,7 @@ async def login(
     ip: str = Depends(get_ip_address),
     user_agent: str = Depends(get_user_agent)
 ) -> Any:
-    """
-    Inicio de sesión con username/email y password
-    """
+    #Inicio de sesión con username/email y password
     logger.info(f"Intento de login desde IP: {ip}, User-Agent: {user_agent}")
     
     try:
@@ -82,9 +80,7 @@ async def refresh_token(
     refresh_request: RefreshTokenRequest,
     db: Session = Depends(get_db)
 ) -> Any:
-    """
-    Refrescar token de acceso usando refresh token
-    """
+    #Refrescar token de acceso usando refresh token
     try:
         # Verificar refresh token
         token_payload = verify_token(refresh_request.refresh_token)
