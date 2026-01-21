@@ -1,5 +1,4 @@
 # Endpoints de proyectos 
-# Endpoints de proyectos 
 import csv
 from io import StringIO
 import uuid
@@ -11,9 +10,9 @@ from sqlalchemy.exc import SQLAlchemyError
 import pandas as pd
 from pathlib import Path
 
-from database import get_db
-from models import Usuario, Proyecto, ProyectoUsuario, Bitacora
-from schemas import (
+from app.database import get_db
+from app.models import Usuario, Proyecto, ProyectoUsuario, Bitacora
+from app.schemas import (
     ProyectoCreate, ProyectoUpdate, ProyectoInDB, 
     ColumnaPadron, PaginatedResponse, ProyectoBase
 )
@@ -22,9 +21,9 @@ from api.deps import (
     get_current_analista_or_higher, get_ip_address,
     require_project_access
 )
-from core.padron_manager import PadronManager
-from utils.file_handlers import FileHandler
-from utils.logging import setup_logger
+from app.core.padron_manager import PadronManager
+from app.utils.file_handlers import FileHandler
+from app.utils.logging import setup_logger
 
 router = APIRouter()
 logger = setup_logger(__name__)

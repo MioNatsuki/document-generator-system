@@ -10,8 +10,8 @@ from loguru import logger
 import pandas as pd
 from io import StringIO
 
-from config import settings
-from database import engine
+from app.config import settings
+from app.database import engine
 
 
 class PadronManager:

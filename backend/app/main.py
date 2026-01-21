@@ -6,12 +6,12 @@ from contextlib import asynccontextmanager
 import time
 from loguru import logger
 
-from config import settings
-from api.v1.auth import router as auth_router
-from api.v1.projects import router as projects_router
-from utils.logging import setup_logger
-from api.v1.templates import router as templates_router
-from api.v1.emissions import router as emissions_router
+from app.config import settings
+from app.api.v1.auth import router as auth_router
+from app.api.v1.projects import router as projects_router
+from app.utils.logging import setup_logger
+from app.api.v1.templates import router as templates_router
+from app.api.v1.emissions import router as emissions_router
 
 # Configurar logger
 setup_logger("app")

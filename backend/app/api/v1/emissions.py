@@ -1,6 +1,4 @@
-"""
-Endpoints para gestión de emisiones
-"""
+#Endpoints para gestión de emisiones
 import os
 import uuid
 from typing import List, Optional
@@ -13,13 +11,13 @@ from sqlalchemy import text
 import tempfile
 import logging
 
-from database import get_db
-from models import Usuario, Proyecto, Plantilla, Bitacora, ProyectoUsuario
-from schemas import EmisionRequest, EmisionCSVData, EmisionInDB
-from api.deps import get_current_active_user, get_ip_address, require_project_access
-from core.emission_engine import EmissionEngine
-from utils.file_handlers import FileHandler
-from utils.logging import setup_logger
+from app.database import get_db
+from app.models import Usuario, Proyecto, Plantilla, Bitacora, ProyectoUsuario
+from app.schemas import EmisionRequest, EmisionCSVData, EmisionInDB
+from app.api.deps import get_current_active_user, get_ip_address, require_project_access
+from app.core.emission_engine import EmissionEngine
+from app.utils.file_handlers import FileHandler
+from app.utils.logging import setup_logger
 
 router = APIRouter()
 logger = setup_logger(__name__)

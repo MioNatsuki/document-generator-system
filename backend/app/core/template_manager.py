@@ -6,9 +6,9 @@ from typing import List, Dict, Any, Tuple, Optional
 from pathlib import Path
 from loguru import logger
 
-from config import settings
-from utils.docx_processor import DocxProcessor
-from utils.pdf_utils import PDFUtils
+from app.config import settings
+from app.utils.docx_processor import DocxProcessor
+from app.utils.pdf_utils import PDFUtils
 
 
 class TemplateManager:

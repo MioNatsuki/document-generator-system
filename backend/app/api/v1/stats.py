@@ -1,6 +1,4 @@
-"""
-Endpoints de estadísticas y dashboard
-"""
+#Endpoints de estadísticas y dashboard
 from datetime import datetime, timedelta
 from typing import Optional, List, Dict, Any
 from fastapi import APIRouter, Depends, HTTPException, status, Query
@@ -11,17 +9,17 @@ import json
 import pandas as pd
 from io import StringIO
 
-from database import get_db
-from models import (
+from app.database import get_db
+from app.models import (
     Usuario, Proyecto, Plantilla, EmisionAcumulada, 
     Bitacora, ProyectoUsuario
 )
-from schemas import PaginatedResponse
+from app.schemas import PaginatedResponse
 from api.deps import (
     get_current_active_user, get_current_superadmin,
     get_current_analista_or_higher, get_ip_address
 )
-from utils.logging import setup_logger
+from app.utils.logging import setup_logger
 
 router = APIRouter()
 logger = setup_logger(__name__)
