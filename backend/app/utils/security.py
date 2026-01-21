@@ -4,8 +4,8 @@ from typing import Optional, List
 from fastapi import HTTPException, status
 from sqlalchemy.orm import Session
 
-from models import Usuario, ProyectoUsuario
-from schemas import RolEnum
+from app.models import Usuario, ProyectoUsuario
+from app.schemas import RolEnum
 
 
 class SecurityManager:

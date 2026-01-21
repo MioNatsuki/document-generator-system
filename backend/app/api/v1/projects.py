@@ -16,7 +16,7 @@ from app.schemas import (
     ProyectoCreate, ProyectoUpdate, ProyectoInDB, 
     ColumnaPadron, PaginatedResponse, ProyectoBase
 )
-from api.deps import (
+from app.api.deps import (
     get_current_active_user, get_current_superadmin, 
     get_current_analista_or_higher, get_ip_address,
     require_project_access

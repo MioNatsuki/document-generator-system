@@ -25,23 +25,23 @@ logger = setup_logger(__name__)
 
 @router.post("/login", response_model=Token)
 async def login(
-    form_data: OAuth2PasswordRequestForm = Depends(),
+    login_data: LoginRequest, 
     db: Session = Depends(get_db),
     ip: str = Depends(get_ip_address),
     user_agent: str = Depends(get_user_agent)
 ) -> Any:
-    #Inicio de sesión con username/email y password
+    """
+    Inicio de sesión con username/email y password (acepta JSON)
+    """
     logger.info(f"Intento de login desde IP: {ip}, User-Agent: {user_agent}")
     
     try:
         # Autenticar usuario
-        user = authenticate_user(db, form_data.username, form_data.password)
+        user = authenticate_user(db, login_data.username, login_data.password)
         
         if not user:
-            # Registrar intento fallido
-            register_failed_login(db, form_data.username, ip)
-            
-            logger.warning(f"Login fallido para usuario: {form_data.username}")
+            register_failed_login(db, login_data.username, ip)
+            logger.warning(f"Login fallido para usuario: {login_data.username}")
             raise HTTPException(
                 status_code=status.HTTP_401_UNAUTHORIZED,
                 detail="Credenciales incorrectas",
@@ -67,6 +67,8 @@ async def login(
             "token_type": "bearer"
         }
         
+    except HTTPException:
+        raise
     except Exception as e:
         logger.error(f"Error en login: {str(e)}")
         raise HTTPException(

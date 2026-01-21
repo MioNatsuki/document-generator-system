@@ -1,18 +1,15 @@
 # Pydantic schemas 
-from pydantic import BaseModel, EmailStr, Field, validator, root_validator
+from pydantic import BaseModel, EmailStr, Field, field_validator, model_validator
 from typing import Optional, List, Dict, Any
 from datetime import datetime
 from enum import Enum
 from uuid import UUID
-
 
 # Enums
 class RolEnum(str, Enum):
     SUPERADMIN = "SUPERADMIN"
     ANALISTA = "ANALISTA"
     AUXILIAR = "AUXILIAR"
-
-
 class AccionBitacoraEnum(str, Enum):
     LOGIN = "LOGIN"
     LOGOUT = "LOGOUT"
@@ -30,19 +27,17 @@ class AccionBitacoraEnum(str, Enum):
     EDITAR_USUARIO = "EDITAR_USUARIO"
     ELIMINAR_USUARIO = "ELIMINAR_USUARIO"
 
-
 # Base schemas
 class UsuarioBase(BaseModel):
     username: str = Field(..., min_length=3, max_length=50)
     email: EmailStr
     nombre_completo: str = Field(..., min_length=1, max_length=255)
     rol: RolEnum
-
-
 class UsuarioCreate(UsuarioBase):
     password: str = Field(..., min_length=8, max_length=100)
     
-    @validator('password')
+    @field_validator('password')
+    @classmethod
     def validate_password(cls, v):
         if not any(c.isupper() for c in v):
             raise ValueError('La contraseña debe contener al menos una mayúscula')
@@ -60,7 +55,8 @@ class UsuarioUpdate(BaseModel):
     is_active: Optional[bool] = None
     rol: Optional[RolEnum] = None
     
-    @validator('password')
+    @field_validator('password')
+    @classmethod
     def validate_password(cls, v):
         if v is not None:
             if not any(c.isupper() for c in v):
@@ -124,9 +120,9 @@ class ProyectoCreate(BaseModel):
     columnas_padron: List[ColumnaPadron]
     csv_data: Optional[bytes] = None  # CSV en base64 o similar
     
-    @root_validator
-    def validate_columnas(cls, values):
-        columnas = values.get('columnas_padron', [])
+    @model_validator(mode='after')
+    def validate_columnas(self):
+        columnas = self.columnas_padron
         nombres = [col.nombre.lower() for col in columnas]
         
         # Verificar columnas obligatorias
@@ -139,7 +135,7 @@ class ProyectoCreate(BaseModel):
         if len(nombres) != len(set(nombres)):
             raise ValueError('Hay nombres de columnas duplicados')
         
-        return values
+        return self
 
 
 class ProyectoUpdate(BaseModel):
@@ -184,7 +180,8 @@ class PlantillaCreate(BaseModel):
     archivo_docx: bytes  # Archivo en base64
     mapeos: List[MapeoPlaceholder]
     
-    @validator('mapeos')
+    @field_validator('mapeos')
+    @classmethod
     def validate_mapeos(cls, v):
         if not v:
             raise ValueError('Debe definir al menos un mapeo')

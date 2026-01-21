@@ -131,27 +131,38 @@ class APIClient:
     
     # Métodos de autenticación
     def login(self, username: str, password: str) -> Dict[str, Any]:
-        """Iniciar sesión"""
-        data = {
+        """Iniciar sesión enviando JSON al backend"""
+        payload = {
             "username": username,
             "password": password
         }
         
-        # Usar FormData para login (OAuth2 compatible)
-        response = self._request(
-            "POST",
-            "/api/v1/auth/login",
-            data={"username": username, "password": password, "grant_type": "password"}
-        )
-        
-        # Guardar tokens
-        self.set_token(response["access_token"])
-        self.set_refresh_token(response["refresh_token"])
-        
-        # Obtener información del usuario
-        self.user_info = self.get_current_user()
-        
-        return response
+        try:
+            response = self._request(
+                "POST",
+                "/api/v1/auth/login",
+                json=payload            
+            )
+            
+            # Guardar tokens
+            self.set_token(response["access_token"])
+            self.set_refresh_token(response["refresh_token"])
+            
+            # Obtener información del usuario (opcional, pero útil)
+            self.user_info = self.get_current_user()
+            
+            self.logger.info(f"Login exitoso para usuario: {username}")
+            return response
+            
+        except APIError as e:
+            if e.status_code == 401:
+                self.logger.warning(f"Credenciales inválidas para {username}")
+                raise APIError("Usuario o contraseña incorrectos", status_code=401)
+            elif e.status_code == 422:
+                self.logger.warning(f"Error de validación en login: {e.details}")
+                raise APIError("Datos de login inválidos", status_code=422, details=e.details)
+            else:
+                raise
     
     def refresh_access_token(self) -> Dict[str, Any]:
         """Refrescar token de acceso"""

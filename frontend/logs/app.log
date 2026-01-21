@@ -155,3 +155,17 @@
 2026-01-21 11:02:25,170 - utils.api_client - ERROR - Error de conexión en GET /health
 2026-01-21 11:02:31,146 - utils.api_client - ERROR - Error de conexión en GET /health
 2026-01-21 11:02:37,158 - utils.api_client - ERROR - Error de conexión en GET /health
+2026-01-21 13:11:42,475 - utils.api_client - INFO - Login exitoso para usuario: superadmin
+2026-01-21 13:11:42,589 - __main__ - INFO - Login exitoso para usuario: superadmin
+2026-01-21 13:11:43,294 - widgets.dashboard_window - ERROR - Error cargando KPIs: Recurso no encontrado: Not Found
+2026-01-21 13:11:43,301 - widgets.dashboard_window - ERROR - Error cargando gráficas: Recurso no encontrado: Not Found
+2026-01-21 13:16:45,143 - widgets.dashboard_window - ERROR - Error cargando KPIs: Recurso no encontrado: Not Found
+2026-01-21 13:16:45,150 - widgets.dashboard_window - ERROR - Error cargando gráficas: Recurso no encontrado: Not Found
+2026-01-21 13:18:30,435 - widgets.dashboard_window - ERROR - Error cargando KPIs: Recurso no encontrado: Not Found
+2026-01-21 13:18:30,443 - widgets.dashboard_window - ERROR - Error cargando gráficas: Recurso no encontrado: Not Found
+2026-01-21 13:18:31,035 - __main__ - CRITICAL - Excepción no capturada
+Traceback (most recent call last):
+  File "C:\xampp\htdocs\projectData\document-generator-system\frontend\widgets\dashboard_window.py", line 734, in export_dashboard
+    action = menu.exec(self.mapToGlobal(self.sender().pos()))
+                                        ^^^^^^^^^^^^^^^^^
+AttributeError: 'QAction' object has no attribute 'pos'

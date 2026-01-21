@@ -37,7 +37,19 @@ class Usuario(Base):
     
     # Relaciones
     proyectos_asignados = relationship("ProyectoUsuario", back_populates="usuario", cascade="all, delete-orphan")
-    emisiones = relationship("EmisionAcumulada", back_populates="usuario")
+    
+    emisiones = relationship(
+        "EmisionAcumulada", 
+        back_populates="usuario",
+        foreign_keys="[EmisionAcumulada.usuario_id]" 
+    )
+    
+    emisiones_generadas = relationship(
+        "EmisionAcumulada",
+        back_populates="usuario_generacion",
+        foreign_keys="[EmisionAcumulada.usuario_id_generacion]" 
+    )
+    
     bitacoras = relationship("Bitacora", back_populates="usuario")
     
     # Índices
@@ -238,11 +250,22 @@ class EmisionAcumulada(Base):
     usuario_id_generacion = Column(Integer, ForeignKey("usuarios.id"), nullable=False)
     fecha_generacion = Column(DateTime(timezone=True), server_default=func.now(), index=True)
     
-    # Relaciones
-    proyecto = relationship("Proyecto", back_populates="emisiones", foreign_keys=[proyecto_id])
-    plantilla = relationship("Plantilla", back_populates="emisiones", foreign_keys=[plantilla_id])
-    usuario = relationship("Usuario", back_populates="emisiones", foreign_keys=[usuario_id])
-    usuario_generacion = relationship("Usuario", foreign_keys=[usuario_id_generacion])
+    # Relaciones - CORREGIDO: especificar explícitamente las claves foráneas
+    proyecto = relationship("Proyecto", back_populates="emisiones")
+    plantilla = relationship("Plantilla", back_populates="emisiones")
+    
+    # Relación con el usuario dueño de los datos (usuario_id)
+    usuario = relationship(
+        "Usuario", 
+        back_populates="emisiones",
+        foreign_keys=[usuario_id]  # ESPECIFICAR LA CLAVE FORÁNEA
+    )
+    
+    # Relación con el usuario que generó el PDF (usuario_id_generacion)
+    usuario_generacion = relationship(
+        "Usuario",
+        foreign_keys=[usuario_id_generacion]  # ESPECIFICAR LA CLAVE FORÁNEA
+    )
     
     # Índices para consultas frecuentes
     __table_args__ = (

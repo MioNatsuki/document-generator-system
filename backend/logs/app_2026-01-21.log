@@ -1,0 +1,82 @@
+2026-01-21 12:02:41.094 | INFO     | app.main:lifespan:26 | Iniciando aplicación...
+2026-01-21 12:02:41.098 | INFO     | app.main:lifespan:27 | Nombre: PDF Generation System
+2026-01-21 12:02:41.099 | INFO     | app.main:lifespan:28 | Entorno: development
+2026-01-21 12:03:04.700 | INFO     | app.main:lifespan:26 | Iniciando aplicación...
+2026-01-21 12:03:04.702 | INFO     | app.main:lifespan:27 | Nombre: PDF Generation System
+2026-01-21 12:03:04.703 | INFO     | app.main:lifespan:28 | Entorno: development
+2026-01-21 12:04:14.372 | INFO     | app.main:lifespan:26 | Iniciando aplicación...
+2026-01-21 12:04:14.375 | INFO     | app.main:lifespan:27 | Nombre: PDF Generation System
+2026-01-21 12:04:14.376 | INFO     | app.main:lifespan:28 | Entorno: development
+2026-01-21 12:12:31.553 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/login | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-21 12:12:31.565 | WARNING  | app.main:validation_exception_handler:98 | Validación fallida: [{'type': 'missing', 'loc': ('body', 'username'), 'msg': 'Field required', 'input': None, 'url': 'https://errors.pydantic.dev/2.5/v/missing'}, {'type': 'missing', 'loc': ('body', 'password'), 'msg': 'Field required', 'input': None, 'url': 'https://errors.pydantic.dev/2.5/v/missing'}]
+2026-01-21 12:12:31.566 | ERROR    | app.main:log_requests:80 | Error procesando request: Object of type FormData is not JSON serializable
+2026-01-21 12:12:31.568 | ERROR    | app.main:global_exception_handler:111 | Error no manejado: Object of type FormData is not JSON serializable
+2026-01-21 12:45:15.743 | INFO     | app.main:lifespan:33 | Apagando aplicación...
+2026-01-21 12:48:11.445 | INFO     | app.main:lifespan:26 | Iniciando aplicación...
+2026-01-21 12:48:11.447 | INFO     | app.main:lifespan:27 | Nombre: PDF Generation System
+2026-01-21 12:48:11.447 | INFO     | app.main:lifespan:28 | Entorno: development
+2026-01-21 12:51:13.553 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/login | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-21 12:51:13.587 | INFO     | app.api.v1.auth:login:36 | Intento de login desde IP: 127.0.0.1, User-Agent: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-21 12:51:13.587 | INFO     | app.auth:authenticate_user:87 | Intentando autenticar usuario: superadmin@system.com
+2026-01-21 12:51:13.596 | ERROR    | app.api.v1.auth:login:73 | Error en login: Could not determine join condition between parent/child tables on relationship Usuario.emisiones - there are multiple foreign key paths linking the tables.  Specify the 'foreign_keys' argument, providing a list of those columns which should be counted as containing a foreign key reference to the parent table.
+2026-01-21 12:51:13.600 | INFO     | app.main:log_requests:84 | Response: 500 | Tiempo: 0.047s
+2026-01-21 12:57:19.515 | INFO     | app.main:lifespan:33 | Apagando aplicación...
+2026-01-21 12:57:27.009 | INFO     | app.main:lifespan:26 | Iniciando aplicación...
+2026-01-21 12:57:27.012 | INFO     | app.main:lifespan:27 | Nombre: PDF Generation System
+2026-01-21 12:57:27.013 | INFO     | app.main:lifespan:28 | Entorno: development
+2026-01-21 12:57:35.692 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/login | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-21 12:57:35.699 | INFO     | app.api.v1.auth:login:36 | Intento de login desde IP: 127.0.0.1, User-Agent: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-21 12:57:35.700 | INFO     | app.auth:authenticate_user:87 | Intentando autenticar usuario: superadmin@system.com
+2026-01-21 12:57:35.707 | ERROR    | app.api.v1.auth:login:73 | Error en login: Could not determine join condition between parent/child tables on relationship Usuario.emisiones - there are multiple foreign key paths linking the tables.  Specify the 'foreign_keys' argument, providing a list of those columns which should be counted as containing a foreign key reference to the parent table.
+2026-01-21 12:57:35.711 | INFO     | app.main:log_requests:84 | Response: 500 | Tiempo: 0.019s
+2026-01-21 12:58:06.962 | INFO     | app.main:lifespan:33 | Apagando aplicación...
+2026-01-21 12:58:11.448 | INFO     | app.main:lifespan:26 | Iniciando aplicación...
+2026-01-21 12:58:11.450 | INFO     | app.main:lifespan:27 | Nombre: PDF Generation System
+2026-01-21 12:58:11.451 | INFO     | app.main:lifespan:28 | Entorno: development
+2026-01-21 12:58:18.498 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/login | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-21 12:58:18.502 | INFO     | app.api.v1.auth:login:36 | Intento de login desde IP: 127.0.0.1, User-Agent: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-21 12:58:18.503 | INFO     | app.auth:authenticate_user:87 | Intentando autenticar usuario: superadmin@system.com
+2026-01-21 12:58:18.714 | ERROR    | app.api.v1.auth:login:73 | Error en login: password cannot be longer than 72 bytes, truncate manually if necessary (e.g. my_password[:72])
+2026-01-21 12:58:18.723 | INFO     | app.main:log_requests:84 | Response: 500 | Tiempo: 0.225s
+2026-01-21 12:58:45.321 | INFO     | app.main:lifespan:33 | Apagando aplicación...
+2026-01-21 13:03:19.719 | INFO     | app.main:lifespan:26 | Iniciando aplicación...
+2026-01-21 13:03:19.721 | INFO     | app.main:lifespan:27 | Nombre: PDF Generation System
+2026-01-21 13:03:19.721 | INFO     | app.main:lifespan:28 | Entorno: development
+2026-01-21 13:03:50.005 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/login | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-21 13:03:50.015 | INFO     | app.api.v1.auth:login:36 | Intento de login desde IP: 127.0.0.1, User-Agent: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-21 13:03:50.018 | INFO     | app.auth:authenticate_user:87 | Intentando autenticar usuario: superadmin
+2026-01-21 13:03:50.747 | ERROR    | app.api.v1.auth:login:73 | Error en login: password cannot be longer than 72 bytes, truncate manually if necessary (e.g. my_password[:72])
+2026-01-21 13:03:50.783 | INFO     | app.main:log_requests:84 | Response: 500 | Tiempo: 0.778s
+2026-01-21 13:04:36.234 | INFO     | app.main:lifespan:33 | Apagando aplicación...
+2026-01-21 13:06:04.645 | INFO     | app.main:lifespan:26 | Iniciando aplicación...
+2026-01-21 13:06:04.647 | INFO     | app.main:lifespan:27 | Nombre: PDF Generation System
+2026-01-21 13:06:04.648 | INFO     | app.main:lifespan:28 | Entorno: development
+2026-01-21 13:06:33.512 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/login | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-21 13:06:33.517 | INFO     | app.api.v1.auth:login:36 | Intento de login desde IP: 127.0.0.1, User-Agent: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-21 13:06:33.518 | INFO     | app.auth:authenticate_user:87 | Intentando autenticar usuario: superadmin
+2026-01-21 13:06:34.090 | INFO     | app.auth:authenticate_user:103 | Usuario autenticado exitosamente: superadmin
+2026-01-21 13:06:34.118 | ERROR    | app.api.v1.auth:login:73 | Error en login: (psycopg2.errors.AmbiguousColumn) la referencia a la columna «key» es ambigua
+LINE 9:                 (SELECT jsonb_object_agg(key, value) 
+                                                 ^
+QUERY:  INSERT INTO bitacora (usuario_id, accion, entidad, entidad_id, detalles)
+        VALUES (
+            NEW.id,
+            'EDITAR_USUARIO',
+            'usuario',
+            NEW.id,
+            jsonb_build_object(
+                'cambios', 
+                (SELECT jsonb_object_agg(key, value) 
+                 FROM jsonb_each(to_jsonb(OLD)) AS old_json 
+                 FULL OUTER JOIN jsonb_each(to_jsonb(NEW)) AS new_json 
+                 ON old_json.key = new_json.key 
+                 WHERE old_json.value IS DISTINCT FROM new_json.value)
+            )
+        )
+CONTEXT:  función PL/pgSQL log_usuario_changes() en la línea 4 en sentencia SQL
+
+[SQL: UPDATE usuarios SET updated_at=now(), last_login=%(last_login)s WHERE usuarios.id = %(usuarios_id)s]
+[parameters: {'last_login': datetime.datetime(2026, 1, 21, 19, 6, 34, 92842), 'usuarios_id': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-01-21 13:06:34.126 | INFO     | app.main:log_requests:84 | Response: 500 | Tiempo: 0.615s
+2026-01-21 13:10:54.482 | INFO     | app.main:lifespan:33 | Apagando aplicación...

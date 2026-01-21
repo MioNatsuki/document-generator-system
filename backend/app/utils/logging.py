@@ -1,10 +1,16 @@
 # Configuración de logs 
+from __future__ import annotations
 import sys
-from loguru import logger, Logger
+from loguru import logger
 from typing import Dict, Any
 import json
 from datetime import datetime
+from typing import TYPE_CHECKING
 
+if TYPE_CHECKING:
+    from loguru import Logger
+else:
+    Logger = object
 
 def setup_logger(name: str) -> Logger:
     """

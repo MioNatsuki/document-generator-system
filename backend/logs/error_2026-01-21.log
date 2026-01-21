@@ -1,0 +1,29 @@
+2026-01-21 12:12:31.566 | ERROR    | app.main:log_requests:80 | Error procesando request: Object of type FormData is not JSON serializable
+2026-01-21 12:12:31.568 | ERROR    | app.main:global_exception_handler:111 | Error no manejado: Object of type FormData is not JSON serializable
+2026-01-21 12:51:13.596 | ERROR    | app.api.v1.auth:login:73 | Error en login: Could not determine join condition between parent/child tables on relationship Usuario.emisiones - there are multiple foreign key paths linking the tables.  Specify the 'foreign_keys' argument, providing a list of those columns which should be counted as containing a foreign key reference to the parent table.
+2026-01-21 12:57:35.707 | ERROR    | app.api.v1.auth:login:73 | Error en login: Could not determine join condition between parent/child tables on relationship Usuario.emisiones - there are multiple foreign key paths linking the tables.  Specify the 'foreign_keys' argument, providing a list of those columns which should be counted as containing a foreign key reference to the parent table.
+2026-01-21 12:58:18.714 | ERROR    | app.api.v1.auth:login:73 | Error en login: password cannot be longer than 72 bytes, truncate manually if necessary (e.g. my_password[:72])
+2026-01-21 13:03:50.747 | ERROR    | app.api.v1.auth:login:73 | Error en login: password cannot be longer than 72 bytes, truncate manually if necessary (e.g. my_password[:72])
+2026-01-21 13:06:34.118 | ERROR    | app.api.v1.auth:login:73 | Error en login: (psycopg2.errors.AmbiguousColumn) la referencia a la columna «key» es ambigua
+LINE 9:                 (SELECT jsonb_object_agg(key, value) 
+                                                 ^
+QUERY:  INSERT INTO bitacora (usuario_id, accion, entidad, entidad_id, detalles)
+        VALUES (
+            NEW.id,
+            'EDITAR_USUARIO',
+            'usuario',
+            NEW.id,
+            jsonb_build_object(
+                'cambios', 
+                (SELECT jsonb_object_agg(key, value) 
+                 FROM jsonb_each(to_jsonb(OLD)) AS old_json 
+                 FULL OUTER JOIN jsonb_each(to_jsonb(NEW)) AS new_json 
+                 ON old_json.key = new_json.key 
+                 WHERE old_json.value IS DISTINCT FROM new_json.value)
+            )
+        )
+CONTEXT:  función PL/pgSQL log_usuario_changes() en la línea 4 en sentencia SQL
+
+[SQL: UPDATE usuarios SET updated_at=now(), last_login=%(last_login)s WHERE usuarios.id = %(usuarios_id)s]
+[parameters: {'last_login': datetime.datetime(2026, 1, 21, 19, 6, 34, 92842), 'usuarios_id': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
