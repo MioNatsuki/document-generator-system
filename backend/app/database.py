@@ -5,7 +5,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.pool import NullPool
 from typing import Generator
 
-from .config import settings
+from config import settings
 
 # Motor sincrónico para SQLAlchemy (usamos sync para compatibilidad)
 engine = create_engine(

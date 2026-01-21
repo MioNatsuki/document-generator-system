@@ -13,13 +13,13 @@ from sqlalchemy import text
 import tempfile
 import logging
 
-from ...database import get_db
-from ...models import Usuario, Proyecto, Plantilla, Bitacora, ProyectoUsuario
-from ...schemas import EmisionRequest, EmisionCSVData, EmisionInDB
-from ...api.deps import get_current_active_user, get_ip_address, require_project_access
-from ...core.emission_engine import EmissionEngine
-from ...utils.file_handlers import FileHandler
-from ...utils.logging import setup_logger
+from database import get_db
+from models import Usuario, Proyecto, Plantilla, Bitacora, ProyectoUsuario
+from schemas import EmisionRequest, EmisionCSVData, EmisionInDB
+from api.deps import get_current_active_user, get_ip_address, require_project_access
+from core.emission_engine import EmissionEngine
+from utils.file_handlers import FileHandler
+from utils.logging import setup_logger
 
 router = APIRouter()
 logger = setup_logger(__name__)

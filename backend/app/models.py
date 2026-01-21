@@ -13,7 +13,7 @@ import uuid
 from uuid import uuid4
 from datetime import datetime
 
-from .database import Base
+from database import Base
 
 
 class Usuario(Base):

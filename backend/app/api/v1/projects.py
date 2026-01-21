@@ -11,20 +11,20 @@ from sqlalchemy.exc import SQLAlchemyError
 import pandas as pd
 from pathlib import Path
 
-from ...database import get_db
-from ...models import Usuario, Proyecto, ProyectoUsuario, Bitacora
-from ...schemas import (
+from database import get_db
+from models import Usuario, Proyecto, ProyectoUsuario, Bitacora
+from schemas import (
     ProyectoCreate, ProyectoUpdate, ProyectoInDB, 
     ColumnaPadron, PaginatedResponse, ProyectoBase
 )
-from ...api.deps import (
+from api.deps import (
     get_current_active_user, get_current_superadmin, 
     get_current_analista_or_higher, get_ip_address,
     require_project_access
 )
-from ...core.padron_manager import PadronManager
-from ...utils.file_handlers import FileHandler
-from ...utils.logging import setup_logger
+from core.padron_manager import PadronManager
+from utils.file_handlers import FileHandler
+from utils.logging import setup_logger
 
 router = APIRouter()
 logger = setup_logger(__name__)

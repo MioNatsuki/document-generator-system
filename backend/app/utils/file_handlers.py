@@ -6,7 +6,7 @@ from fastapi import UploadFile, HTTPException
 from pathlib import Path
 import magic
 
-from ..config import settings
+from config import settings
 
 
 class FileHandler:

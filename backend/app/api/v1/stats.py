@@ -11,17 +11,17 @@ import json
 import pandas as pd
 from io import StringIO
 
-from ...database import get_db
-from ...models import (
+from database import get_db
+from models import (
     Usuario, Proyecto, Plantilla, EmisionAcumulada, 
     Bitacora, ProyectoUsuario
 )
-from ...schemas import PaginatedResponse
-from ...api.deps import (
+from schemas import PaginatedResponse
+from api.deps import (
     get_current_active_user, get_current_superadmin,
     get_current_analista_or_higher, get_ip_address
 )
-from ...utils.logging import setup_logger
+from utils.logging import setup_logger
 
 router = APIRouter()
 logger = setup_logger(__name__)

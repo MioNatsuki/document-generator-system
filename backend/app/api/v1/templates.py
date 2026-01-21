@@ -10,15 +10,15 @@ from sqlalchemy.orm import Session
 from sqlalchemy.exc import SQLAlchemyError
 from pathlib import Path
 
-from ...database import get_db
-from ...models import Usuario, Proyecto, Plantilla, Bitacora, ProyectoUsuario
-from ...schemas import PlantillaCreate, PlantillaUpdate, PlantillaInDB, MapeoPlaceholder, PaginatedResponse
-from ...api.deps import get_current_active_user, get_current_analista_or_higher, get_ip_address
-from ...core.template_manager import TemplateManager
-from ...utils.file_handlers import FileHandler
-from ...utils.logging import setup_logger
-from ...utils.docx_processor import DocxProcessor
-from ...utils.pdf_utils import PDFUtils
+from database import get_db
+from models import Usuario, Proyecto, Plantilla, Bitacora, ProyectoUsuario
+from schemas import PlantillaCreate, PlantillaUpdate, PlantillaInDB, MapeoPlaceholder, PaginatedResponse
+from api.deps import get_current_active_user, get_current_analista_or_higher, get_ip_address
+from core.template_manager import TemplateManager
+from utils.file_handlers import FileHandler
+from utils.logging import setup_logger
+from utils.docx_processor import DocxProcessor
+from utils.pdf_utils import PDFUtils
 
 router = APIRouter()
 logger = setup_logger(__name__)

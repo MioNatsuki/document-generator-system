@@ -16,11 +16,11 @@ import logging
 from sqlalchemy.orm import Session
 from sqlalchemy import text
 
-from ..config import settings
-from ..models import EmisionTemp, EmisionFinal, EmisionAcumulada, Proyecto, Plantilla
-from ..utils.pdf_generator import PDFGenerator
-from ..utils.barcode_generator import BarcodeGenerator
-from ..utils.text_formatter import TextFormatter
+from config import settings
+from models import EmisionTemp, EmisionFinal, EmisionAcumulada, Proyecto, Plantilla
+from utils.pdf_generator import PDFGenerator
+from utils.barcode_generator import BarcodeGenerator
+from utils.text_formatter import TextFormatter
 
 logger = logging.getLogger(__name__)
 

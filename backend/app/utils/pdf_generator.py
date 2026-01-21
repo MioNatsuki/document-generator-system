@@ -19,8 +19,8 @@ from reportlab.lib.colors import Color, black, white
 from PIL import Image, ImageDraw, ImageFont
 import io
 
-from .text_formatter import TextFormatter
-from .barcode_generator import BarcodeGenerator
+from text_formatter import TextFormatter
+from barcode_generator import BarcodeGenerator
 
 logger = logging.getLogger(__name__)
 

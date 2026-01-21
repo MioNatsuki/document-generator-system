@@ -6,9 +6,9 @@ from passlib.context import CryptContext
 from sqlalchemy.orm import Session
 from loguru import logger
 
-from .config import settings
-from .models import Usuario, Bitacora
-from .schemas import TokenPayload
+from config import settings
+from models import Usuario, Bitacora
+from schemas import TokenPayload
 
 
 # Configuración de bcrypt
