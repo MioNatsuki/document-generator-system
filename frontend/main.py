@@ -115,8 +115,14 @@ class PDFGeneratorApp:
         if self.login_window:
             self.login_window.hide()
             
-        self.dashboard_window = DashboardWindow(user_info)
-        self.dashboard_window.show()
+        from widgets.project_selection_window import ProjectSelectionWindow
+        self.project_selection_window = ProjectSelectionWindow(user_info)
+        self.project_selection_window.show()
+
+        # Solo superadmin puede acceder a DashboardWindow directamente
+        if user_info['rol'] == 'SUPERADMIN':
+            # DashboardWindow solo será accesible desde el sidebar
+            pass
         
     def validate_token(self):
         """Validar token periódicamente"""

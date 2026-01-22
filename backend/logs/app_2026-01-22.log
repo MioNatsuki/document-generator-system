@@ -1,0 +1,143 @@
+2026-01-22 08:42:20.292 | INFO     | app.main:lifespan:33 | Apagando aplicación...
+2026-01-22 08:42:38.980 | INFO     | app.main:lifespan:26 | Iniciando aplicación...
+2026-01-22 08:42:38.981 | INFO     | app.main:lifespan:27 | Nombre: PDF Generation System
+2026-01-22 08:42:38.982 | INFO     | app.main:lifespan:28 | Entorno: development
+2026-01-22 08:59:48.687 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/login | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 08:59:48.699 | INFO     | app.api.v1.auth:login:36 | Intento de login desde IP: 127.0.0.1, User-Agent: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 08:59:48.701 | INFO     | app.auth:authenticate_user:87 | Intentando autenticar usuario: superadmin
+2026-01-22 08:59:49.406 | INFO     | app.auth:authenticate_user:103 | Usuario autenticado exitosamente: superadmin
+2026-01-22 08:59:49.653 | INFO     | app.auth:update_last_login:126 | Último login actualizado para usuario: superadmin
+2026-01-22 08:59:49.704 | DEBUG    | app.auth:create_access_token:46 | Token de acceso creado para superadmin, expira: 2026-01-23 14:59:49.654922
+2026-01-22 08:59:49.706 | DEBUG    | app.auth:create_refresh_token:60 | Token de refresh creado para superadmin, expira: 2026-01-29 14:59:49.705482
+2026-01-22 08:59:49.706 | INFO     | app.api.v1.auth:login:62 | Login exitoso para usuario: superadmin
+2026-01-22 08:59:49.714 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 1.028s
+2026-01-22 08:59:49.720 | INFO     | app.main:log_requests:75 | Request: GET http://localhost:8000/api/v1/auth/me | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 08:59:49.830 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.110s
+2026-01-22 08:59:49.837 | INFO     | app.main:log_requests:75 | Request: GET http://localhost:8000/api/v1/auth/me | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 08:59:50.036 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.200s
+2026-01-22 08:59:50.259 | INFO     | app.main:log_requests:75 | Request: GET http://localhost:8000/api/v1/projects/?skip=0&limit=100 | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 08:59:50.393 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.135s
+2026-01-22 09:00:28.893 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 09:00:29.109 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.216s
+2026-01-22 09:01:28.879 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 09:01:28.982 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.103s
+2026-01-22 09:02:28.927 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 09:02:29.030 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.103s
+2026-01-22 09:03:28.915 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 09:03:29.031 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.116s
+2026-01-22 09:04:28.913 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 09:04:29.024 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.110s
+2026-01-22 09:05:28.926 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 09:05:29.025 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.099s
+2026-01-22 09:06:28.945 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 09:06:29.063 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.118s
+2026-01-22 09:07:28.958 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 09:07:29.074 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.116s
+2026-01-22 09:08:28.954 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 09:08:29.056 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.102s
+2026-01-22 09:09:28.959 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 09:09:29.106 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.147s
+2026-01-22 09:10:28.975 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 09:10:29.086 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.111s
+2026-01-22 09:11:28.985 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 09:11:29.128 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.143s
+2026-01-22 09:12:28.977 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 09:12:29.094 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.117s
+2026-01-22 09:13:28.992 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 09:13:29.215 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.223s
+2026-01-22 09:14:28.998 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 09:14:29.136 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.138s
+2026-01-22 09:15:29.027 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 09:15:29.143 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.115s
+2026-01-22 09:16:29.050 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 09:16:29.162 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.113s
+2026-01-22 09:17:29.190 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 09:17:29.301 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.111s
+2026-01-22 09:18:29.211 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 09:18:29.315 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.104s
+2026-01-22 09:19:29.233 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 09:19:29.345 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.112s
+2026-01-22 09:20:29.249 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 09:20:30.229 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.980s
+2026-01-22 09:21:04.849 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/logout | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 09:21:05.162 | INFO     | app.api.v1.auth:logout:158 | Logout exitoso para usuario: superadmin
+2026-01-22 09:21:05.163 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.314s
+2026-01-22 10:01:21.197 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/login | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:01:21.203 | INFO     | app.api.v1.auth:login:36 | Intento de login desde IP: 127.0.0.1, User-Agent: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:01:21.204 | INFO     | app.auth:authenticate_user:87 | Intentando autenticar usuario: superadmin
+2026-01-22 10:01:21.688 | INFO     | app.auth:authenticate_user:103 | Usuario autenticado exitosamente: superadmin
+2026-01-22 10:01:21.931 | INFO     | app.auth:update_last_login:126 | Último login actualizado para usuario: superadmin
+2026-01-22 10:01:21.933 | DEBUG    | app.auth:create_access_token:46 | Token de acceso creado para superadmin, expira: 2026-01-23 16:01:21.932883
+2026-01-22 10:01:21.933 | DEBUG    | app.auth:create_refresh_token:60 | Token de refresh creado para superadmin, expira: 2026-01-29 16:01:21.933920
+2026-01-22 10:01:21.933 | INFO     | app.api.v1.auth:login:62 | Login exitoso para usuario: superadmin
+2026-01-22 10:01:21.935 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.738s
+2026-01-22 10:01:21.940 | INFO     | app.main:log_requests:75 | Request: GET http://localhost:8000/api/v1/auth/me | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:01:22.042 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.102s
+2026-01-22 10:01:22.051 | INFO     | app.main:log_requests:75 | Request: GET http://localhost:8000/api/v1/auth/me | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:01:22.267 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.216s
+2026-01-22 10:01:22.406 | INFO     | app.main:log_requests:75 | Request: GET http://localhost:8000/api/v1/projects/?skip=0&limit=100 | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:01:22.538 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.132s
+2026-01-22 10:02:01.152 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:02:01.383 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.231s
+2026-01-22 10:03:01.146 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:03:01.262 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.116s
+2026-01-22 10:04:01.172 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:04:01.289 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.117s
+2026-01-22 10:05:01.153 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:05:01.370 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.217s
+2026-01-22 10:06:01.174 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:06:01.285 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.111s
+2026-01-22 10:07:01.173 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:07:01.291 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.118s
+2026-01-22 10:08:01.195 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:08:01.304 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.109s
+2026-01-22 10:09:01.208 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:09:01.316 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.108s
+2026-01-22 10:10:01.221 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:10:01.338 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.117s
+2026-01-22 10:11:01.241 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:11:01.347 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.106s
+2026-01-22 10:12:01.253 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:12:01.362 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.110s
+2026-01-22 10:13:01.226 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:13:01.334 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.109s
+2026-01-22 10:14:01.259 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:14:01.362 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.102s
+2026-01-22 10:15:01.273 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:15:01.385 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.112s
+2026-01-22 10:16:01.304 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:16:01.411 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.107s
+2026-01-22 10:17:01.281 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:17:01.395 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.114s
+2026-01-22 10:18:01.298 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:18:01.615 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.318s
+2026-01-22 10:19:01.321 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:19:01.532 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.210s
+2026-01-22 10:20:01.301 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:20:01.462 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.161s
+2026-01-22 10:21:01.335 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:21:01.462 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.127s
+2026-01-22 10:22:01.333 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:22:01.444 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.112s
+2026-01-22 10:23:01.377 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:23:01.495 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.118s
+2026-01-22 10:24:01.331 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:24:01.455 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.124s
+2026-01-22 10:25:01.335 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:25:01.445 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.111s
+2026-01-22 10:26:01.353 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:26:01.562 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.209s
+2026-01-22 10:27:01.384 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:27:01.526 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.142s
+2026-01-22 10:28:01.364 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:28:01.479 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.115s
+2026-01-22 10:29:01.371 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:29:01.487 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.116s
+2026-01-22 10:30:01.363 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:30:01.589 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.226s
+2026-01-22 10:31:01.751 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:31:01.857 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.106s
+2026-01-22 10:31:12.030 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/logout | IP: 127.0.0.1 | UA: Combinación de Correspondencia Automatizada/1.0.0
+2026-01-22 10:31:12.310 | INFO     | app.api.v1.auth:logout:158 | Logout exitoso para usuario: superadmin
+2026-01-22 10:31:12.311 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.281s
+2026-01-22 11:22:34.998 | INFO     | app.main:lifespan:33 | Apagando aplicación...

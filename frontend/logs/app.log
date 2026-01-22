@@ -169,3 +169,47 @@ Traceback (most recent call last):
     action = menu.exec(self.mapToGlobal(self.sender().pos()))
                                         ^^^^^^^^^^^^^^^^^
 AttributeError: 'QAction' object has no attribute 'pos'
+2026-01-22 08:59:49,833 - utils.api_client - INFO - Login exitoso para usuario: superadmin
+2026-01-22 08:59:50,040 - __main__ - INFO - Login exitoso para usuario: superadmin
+2026-01-22 09:07:33,130 - __main__ - CRITICAL - Excepción no capturada
+Traceback (most recent call last):
+  File "C:\xampp\htdocs\projectData\document-generator-system\frontend\widgets\sidebar.py", line 183, in <lambda>
+    btn.clicked.connect(lambda: self.project_selected.emit(None))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Sidebar.project_selected[dict].emit(): argument 1 has unexpected type 'NoneType'
+2026-01-22 10:01:22,047 - utils.api_client - INFO - Login exitoso para usuario: superadmin
+2026-01-22 10:01:22,270 - __main__ - INFO - Login exitoso para usuario: superadmin
+2026-01-22 11:33:27,928 - utils.api_client - INFO - Login exitoso para usuario: superadmin
+2026-01-22 11:33:28,147 - __main__ - INFO - Login exitoso para usuario: superadmin
+2026-01-22 11:52:26,595 - __main__ - CRITICAL - Excepción no capturada
+Traceback (most recent call last):
+  File "C:\xampp\htdocs\projectData\document-generator-system\frontend\views\projects_view.py", line 914, in select_csv_file
+    file_path = FileDialog.open_csv_file(self)
+                ^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'FileDialog' where it is not associated with a value
+2026-01-22 11:52:32,179 - __main__ - CRITICAL - Excepción no capturada
+Traceback (most recent call last):
+  File "C:\xampp\htdocs\projectData\document-generator-system\frontend\views\projects_view.py", line 914, in select_csv_file
+    file_path = FileDialog.open_csv_file(self)
+                ^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'FileDialog' where it is not associated with a value
+2026-01-22 11:52:34,403 - __main__ - CRITICAL - Excepción no capturada
+Traceback (most recent call last):
+  File "C:\xampp\htdocs\projectData\document-generator-system\frontend\views\projects_view.py", line 914, in select_csv_file
+    file_path = FileDialog.open_csv_file(self)
+                ^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'FileDialog' where it is not associated with a value
+2026-01-22 11:53:44,700 - __main__ - CRITICAL - Excepción no capturada
+Traceback (most recent call last):
+  File "C:\xampp\htdocs\projectData\document-generator-system\frontend\views\projects_view.py", line 914, in select_csv_file
+    file_path = FileDialog.open_csv_file(self)
+                ^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'FileDialog' where it is not associated with a value
+2026-01-22 11:54:55,210 - __main__ - CRITICAL - Excepción no capturada
+Traceback (most recent call last):
+  File "C:\xampp\htdocs\projectData\document-generator-system\frontend\widgets\sidebar.py", line 183, in <lambda>
+    btn.clicked.connect(lambda: self.project_selected.emit(None))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Sidebar.project_selected[dict].emit(): argument 1 has unexpected type 'NoneType'
+2026-01-22 11:55:00,600 - widgets.dashboard_window - ERROR - Error cargando KPIs: Recurso no encontrado: Not Found
+2026-01-22 11:55:00,615 - widgets.dashboard_window - ERROR - Error cargando gráficas: Recurso no encontrado: Not Found
