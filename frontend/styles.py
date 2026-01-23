@@ -1,10 +1,5 @@
-# Estilos y paleta de colores 
 from config import config
-
-
 class Styles:
-    """Clase para gestionar estilos de la aplicación"""
-    
     @staticmethod
     def get_main_style() -> str:
         """Estilo principal de la aplicación"""
@@ -432,7 +427,4 @@ class Styles:
             color: #666666;
         }}
         """
-
-
-# Instancia global de estilos
 styles = Styles()

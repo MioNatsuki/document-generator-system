@@ -17,7 +17,7 @@ class Config:
     API_TIMEOUT = 30
     
     # Aplicación
-    APP_NAME = "Combinación de Correspondencia Automatizada"
+    APP_NAME = "Combinación de Correspondencia"
     APP_VERSION = "1.0.0"
     
     # UI

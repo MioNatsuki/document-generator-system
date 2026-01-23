@@ -22,9 +22,9 @@ class LoginWindow(QWidget):
     
     def __init__(self):
         super().__init__()
-        self.setWindowTitle(f"{config.APP_NAME} - Login")
+        self.setWindowTitle(f"Inicio de Sesión")
         self.setObjectName("LoginWindow")
-        self.setFixedSize(500, 450)
+        self.setFixedSize(800, 800)
         self.setStyleSheet(styles.get_login_style())
         
         # Intentar conexión automática

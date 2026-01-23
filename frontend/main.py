@@ -180,6 +180,20 @@ class PDFGeneratorApp:
     def run(self):
         """Ejecutar aplicación"""
         return self.app.exec()
+    
+    @classmethod
+    def ensure_directories(cls):
+        """Crear directorios necesarios"""
+        directories = [
+            cls.BASE_DIR / "output",
+            cls.BASE_DIR / "uploads",
+            cls.BASE_DIR / "temp",
+            cls.BASE_DIR / "logs",
+            cls.BASE_DIR / "logos"  # Añadir directorio para logos
+        ]
+        
+        for directory in directories:
+            directory.mkdir(parents=True, exist_ok=True)
 
 
 def main():

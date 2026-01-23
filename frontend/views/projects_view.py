@@ -14,6 +14,7 @@ import pandas as pd
 from pathlib import Path
 import tempfile
 import os
+import shutil
 
 from config import config
 from styles import styles
@@ -86,12 +87,39 @@ class NewProjectWizard(QWizard):
             if not self.padron_columns:
                 raise ValueError("Debes configurar al menos una columna para el padrón")
             
+            # Procesar logo si existe
+            logo_url = None
+            if hasattr(self, 'logo_path') and self.logo_path:
+                try:
+                    # Crear directorio de logos si no existe
+                    logos_dir = config.BASE_DIR / "logos"
+                    logos_dir.mkdir(exist_ok=True)
+                    
+                    # Generar nombre único para el logo
+                    import uuid
+                    logo_ext = Path(self.logo_path).suffix
+                    logo_filename = f"{uuid.uuid4()}{logo_ext}"
+                    logo_dest = logos_dir / logo_filename
+                    
+                    # Copiar logo
+                    shutil.copy2(self.logo_path, logo_dest)
+                    
+                    # URL relativa para la base de datos
+                    logo_url = f"logos/{logo_filename}"
+                    
+                except Exception as e:
+                    QMessageBox.warning(
+                        self,
+                        "Advertencia",
+                        f"No se pudo guardar el logo: {str(e)}\nEl proyecto se creará sin logo."
+                    )
+            
             # Preparar datos para API
             proyecto_data = {
                 "proyecto": {
                     "nombre": self.project_name,
                     "descripcion": self.project_description,
-                    "logo_url": None
+                    "logo_url": logo_url
                 },
                 "columnas_padron": self.padron_columns,
                 "csv_data": None
@@ -260,6 +288,7 @@ class ProjectInfoPage(QWizardPage):
         self.init_ui()
         
     def init_ui(self):
+        """Inicializar interfaz de usuario"""
         layout = QVBoxLayout()
         layout.setSpacing(20)
         layout.setContentsMargins(30, 30, 30, 30)
@@ -288,15 +317,52 @@ class ProjectInfoPage(QWizardPage):
         desc_layout.addWidget(self.descripcion_input)
         desc_group.setLayout(desc_layout)
         
-        # Logo (placeholder)
-        logo_group = QGroupBox("Logo del proyecto")
+        # Logo del proyecto
+        self.logo_group = QGroupBox("Logo del proyecto (opcional)")
         logo_layout = QVBoxLayout()
         
-        logo_label = QLabel("La funcionalidad de logo estará disponible en futuras versiones")
-        logo_label.setStyleSheet("color: #666; font-style: italic;")
+        # Frame para mostrar logo
+        self.logo_frame = QFrame()
+        self.logo_frame.setFixedSize(200, 150)
+        self.logo_frame.setStyleSheet("""
+            QFrame {
+                background-color: #f8f9fa;
+                border: 2px dashed #dee2e6;
+                border-radius: 10px;
+            }
+        """)
         
-        logo_layout.addWidget(logo_label)
-        logo_group.setLayout(logo_layout)
+        self.logo_label = QLabel("Sin logo")
+        self.logo_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.logo_label.setStyleSheet("color: #666; font-style: italic;")
+        
+        logo_frame_layout = QVBoxLayout()
+        logo_frame_layout.addWidget(self.logo_label)
+        self.logo_frame.setLayout(logo_frame_layout)
+        
+        # Botones para logo
+        logo_buttons_layout = QHBoxLayout()
+        
+        self.select_logo_btn = QPushButton("Seleccionar logo")
+        self.select_logo_btn.setStyleSheet(styles.get_main_style())
+        self.select_logo_btn.clicked.connect(self.select_logo)
+        
+        self.clear_logo_btn = QPushButton("Quitar logo")
+        self.clear_logo_btn.setStyleSheet(styles.get_main_style())
+        self.clear_logo_btn.clicked.connect(self.clear_logo)
+        self.clear_logo_btn.setEnabled(False)
+        
+        logo_buttons_layout.addWidget(self.select_logo_btn)
+        logo_buttons_layout.addWidget(self.clear_logo_btn)
+        
+        # Información del logo
+        self.logo_info_label = QLabel("Formatos aceptados: PNG, JPG, JPEG. Tamaño máximo: 2MB")
+        self.logo_info_label.setStyleSheet("color: #666; font-size: 11px;")
+        
+        logo_layout.addWidget(self.logo_frame, 0, Qt.AlignmentFlag.AlignCenter)
+        logo_layout.addLayout(logo_buttons_layout)
+        logo_layout.addWidget(self.logo_info_label)
+        self.logo_group.setLayout(logo_layout)
         
         # Si el método es "upload", mostrar opción de CSV
         self.csv_group = QGroupBox("Archivo CSV inicial")
@@ -324,7 +390,7 @@ class ProjectInfoPage(QWizardPage):
         # Agregar al layout
         layout.addWidget(nombre_group)
         layout.addWidget(desc_group)
-        layout.addWidget(logo_group)
+        layout.addWidget(self.logo_group)
         
         # Solo mostrar grupo CSV si el método es "upload"
         wizard = self.wizard()
@@ -339,7 +405,73 @@ class ProjectInfoPage(QWizardPage):
         
         # Registrar campo obligatorio
         self.registerField("nombre*", self.nombre_input)
+    
+    def select_logo(self):
+        """Seleccionar logo para el proyecto"""
+        file_path, _ = QFileDialog.getOpenFileName(
+            self,
+            "Seleccionar logo",
+            str(Path.home()),
+            "Imágenes (*.png *.jpg *.jpeg);;Todos los archivos (*)"
+        )
         
+        if file_path:
+            try:
+                # Validar tamaño
+                file_size = os.path.getsize(file_path)
+                if file_size > 2 * 1024 * 1024:  # 2MB máximo
+                    QMessageBox.warning(
+                        self,
+                        "Archivo grande",
+                        "El logo no debe exceder 2MB. Por favor, selecciona una imagen más pequeña."
+                    )
+                    return
+                
+                # Validar extensión
+                ext = Path(file_path).suffix.lower()
+                if ext not in ['.png', '.jpg', '.jpeg']:
+                    QMessageBox.warning(
+                        self,
+                        "Formato no válido",
+                        "Por favor, selecciona una imagen en formato PNG o JPG."
+                    )
+                    return
+                
+                # Mostrar preview del logo
+                pixmap = QPixmap(file_path)
+                if not pixmap.isNull():
+                    # Escalar manteniendo proporciones
+                    scaled_pixmap = pixmap.scaled(
+                        180, 130,
+                        Qt.AspectRatioMode.KeepAspectRatio,
+                        Qt.TransformationMode.SmoothTransformation
+                    )
+                    
+                    # Actualizar interfaz
+                    self.logo_label.clear()
+                    self.logo_label.setPixmap(scaled_pixmap)
+                    self.logo_path = file_path
+                    self.clear_logo_btn.setEnabled(True)
+                    
+                    # Guardar en el wizard
+                    wizard = self.wizard()
+                    if wizard:
+                        wizard.logo_path = file_path
+                    
+            except Exception as e:
+                QMessageBox.critical(self, "Error", f"No se pudo cargar el logo: {str(e)}")
+
+    def clear_logo(self):
+        """Quitar logo seleccionado"""
+        self.logo_label.clear()
+        self.logo_label.setText("Sin logo")
+        self.logo_path = None
+        self.clear_logo_btn.setEnabled(False)
+        
+        wizard = self.wizard()
+        if wizard:
+            wizard.logo_path = None
+
     def select_csv(self):
         """Seleccionar archivo CSV"""
         file_path = FileDialog.open_csv_file(self)
@@ -349,6 +481,7 @@ class ProjectInfoPage(QWizardPage):
             
             try:
                 # Leer CSV para preview y validación
+                import pandas as pd
                 df = pd.read_csv(file_path, nrows=10)  # Solo primeras 10 filas
                 
                 # Guardar en el wizard
@@ -385,7 +518,6 @@ class ProjectInfoPage(QWizardPage):
             self.nombre_input.setStyleSheet("border: 2px solid #dc3545;")
         else:
             self.nombre_input.setStyleSheet("")
-
 
 class PadronConfigPage(QWizardPage):
     """Página 3: Configuración del padrón"""
@@ -911,7 +1043,8 @@ class PadronLoadPage(QWizardPage):
             
     def select_csv_file(self):
         """Seleccionar archivo CSV para carga"""
-        file_path = FileDialog.open_csv_file(self)
+        from utils.file_dialogs import FileDialog as FD
+        file_path = FD.open_csv_file(self)
         
         if file_path:
             wizard = self.wizard()
@@ -923,8 +1056,7 @@ class PadronLoadPage(QWizardPage):
                 self.csv_select_btn.setText("Cambiar archivo CSV")
                 
                 # Validar tamaño
-                from ..utils.file_dialogs import FileDialog
-                valido, mensaje = FileDialog.validate_file_size(file_path, 50)
+                valido, mensaje = FD.validate_file_size(file_path, 50)
                 if not valido:
                     QMessageBox.warning(self, "Archivo grande", mensaje)
     
