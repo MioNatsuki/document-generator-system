@@ -188,8 +188,26 @@ async def listar_proyectos(
             total = query.count()
             proyectos = query.offset(skip).limit(limit).all()
         
+        # **CONVERTIR A DICCIONARIO SIMPLE PARA SERIALIZACIÓN**
+        proyectos_simple = []
+        for proyecto in proyectos:
+            proyectos_simple.append({
+                "id": proyecto.id,
+                "uuid": proyecto.uuid,
+                "nombre": proyecto.nombre,
+                "descripcion": proyecto.descripcion,
+                "logo_url": proyecto.logo_url,
+                "nombre_tabla_padron": proyecto.nombre_tabla_padron,
+                "uuid_padron": proyecto.uuid_padron,
+                "estructura_padron": proyecto.estructura_padron,
+                "is_deleted": proyecto.is_deleted,
+                "created_at": proyecto.created_at,
+                "updated_at": proyecto.updated_at,
+                # No incluir relaciones
+            })
+        
         return {
-            "items": proyectos,
+            "items": proyectos_simple,
             "total": total,
             "page": (skip // limit) + 1 if limit > 0 else 1,
             "size": limit,
@@ -396,7 +414,7 @@ async def eliminar_proyecto(
 @router.post("/{proyecto_id}/cargar-padron")
 async def cargar_padron_csv(
     proyecto_id: int,
-    archivo: UploadFile = File(...),
+    archivo: UploadFile = File(...),  # ← NOMBRE CORRECTO: 'archivo' no 'archivo_csv'
     merge: bool = Form(True, description="Fusionar con datos existentes"),
     current_user: Usuario = Depends(get_current_analista_or_higher),
     db: Session = Depends(get_db),
@@ -433,7 +451,7 @@ async def cargar_padron_csv(
                 detail="Proyecto no encontrado"
             )
         
-        # Validar archivo
+        # Validar archivo - CORREGIR: el parámetro se llama 'archivo' no 'archivo_csv'
         if not archivo.filename or not archivo.filename.lower().endswith('.csv'):
             raise HTTPException(
                 status_code=status.HTTP_400_BAD_REQUEST,
@@ -501,7 +519,6 @@ async def cargar_padron_csv(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Error procesando CSV: {str(e)}"
         )
-
 
 @router.get("/{proyecto_id}/padron/estructura")
 async def obtener_estructura_padron(

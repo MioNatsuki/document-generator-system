@@ -1,0 +1,8 @@
+2026-01-27 16:08:43.310 | ERROR    | app.main:log_requests:80 | Error procesando request: Object of type FormData is not JSON serializable
+2026-01-27 16:08:43.323 | ERROR    | app.main:global_exception_handler:111 | Error no manejado: Object of type FormData is not JSON serializable
+2026-01-27 16:09:36.992 | ERROR    | app.main:log_requests:80 | Error procesando request: Unable to serialize unknown type: <class 'app.models.Proyecto'>
+2026-01-27 16:09:36.994 | ERROR    | app.main:global_exception_handler:111 | Error no manejado: Unable to serialize unknown type: <class 'app.models.Proyecto'>
+2026-01-27 16:19:47.212 | ERROR    | app.main:log_requests:80 | Error procesando request: Unable to serialize unknown type: <class 'app.models.Proyecto'>
+2026-01-27 16:19:47.228 | ERROR    | app.main:global_exception_handler:111 | Error no manejado: Unable to serialize unknown type: <class 'app.models.Proyecto'>
+2026-01-27 16:38:36.223 | ERROR    | app.main:log_requests:80 | Error procesando request: Object of type FormData is not JSON serializable
+2026-01-27 16:38:36.226 | ERROR    | app.main:global_exception_handler:111 | Error no manejado: Object of type FormData is not JSON serializable

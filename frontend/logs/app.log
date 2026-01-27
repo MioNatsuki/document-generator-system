@@ -240,3 +240,90 @@ Traceback (most recent call last):
     def __call__(cls, value, names=None, *values, module=None, qualname=None, type=None, start=1, boundary=None):
     
 KeyboardInterrupt
+2026-01-26 10:15:22,239 - utils.api_client - WARNING - Credenciales inválidas para superadmin
+2026-01-26 10:15:27,701 - utils.api_client - INFO - Login exitoso para usuario: superadmin
+2026-01-26 10:15:27,818 - __main__ - INFO - Login exitoso para usuario: superadmin
+2026-01-27 16:06:07,254 - utils.api_client - INFO - Login exitoso para usuario: superadmin
+2026-01-27 16:06:07,370 - __main__ - INFO - Login exitoso para usuario: superadmin
+2026-01-27 16:19:46,707 - utils.api_client - INFO - Login exitoso para usuario: superadmin
+2026-01-27 16:19:46,830 - __main__ - INFO - Login exitoso para usuario: superadmin
+2026-01-27 16:37:17,724 - utils.api_client - INFO - Login exitoso para usuario: superadmin
+2026-01-27 16:37:17,853 - __main__ - INFO - Login exitoso para usuario: superadmin
+2026-01-27 16:37:26,122 - __main__ - CRITICAL - Excepción no capturada
+Traceback (most recent call last):
+  File "C:\xampp\htdocs\projectData\document-generator-system\frontend\widgets\project_selection_window.py", line 527, in <lambda>
+    access_btn.clicked.connect(lambda checked, p=proyecto: self.open_project(p))
+                                                           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp\htdocs\projectData\document-generator-system\frontend\widgets\project_selection_window.py", line 576, in open_project
+    self.project_window = ProjectWindow(proyecto, self.user_info)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp\htdocs\projectData\document-generator-system\frontend\widgets\project_window.py", line 48, in __init__
+    self.init_ui()
+  File "C:\xampp\htdocs\projectData\document-generator-system\frontend\widgets\project_window.py", line 72, in init_ui
+    self.create_tabs()
+  File "C:\xampp\htdocs\projectData\document-generator-system\frontend\widgets\project_window.py", line 335, in create_tabs
+    from ..views.templates_view import TemplatesView
+ImportError: attempted relative import beyond top-level package
+2026-01-27 16:37:41,080 - __main__ - CRITICAL - Excepción no capturada
+Traceback (most recent call last):
+  File "C:\xampp\htdocs\projectData\document-generator-system\frontend\widgets\project_selection_window.py", line 539, in <lambda>
+    card.mousePressEvent = lambda event, p=proyecto: self.open_project(p) if event.button() == Qt.MouseButton.LeftButton else None
+                                                     ^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp\htdocs\projectData\document-generator-system\frontend\widgets\project_selection_window.py", line 576, in open_project
+    self.project_window = ProjectWindow(proyecto, self.user_info)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp\htdocs\projectData\document-generator-system\frontend\widgets\project_window.py", line 48, in __init__
+    self.init_ui()
+  File "C:\xampp\htdocs\projectData\document-generator-system\frontend\widgets\project_window.py", line 72, in init_ui
+    self.create_tabs()
+  File "C:\xampp\htdocs\projectData\document-generator-system\frontend\widgets\project_window.py", line 335, in create_tabs
+    from ..views.templates_view import TemplatesView
+ImportError: attempted relative import beyond top-level package
+2026-01-27 16:37:48,920 - __main__ - CRITICAL - Excepción no capturada
+Traceback (most recent call last):
+  File "C:\xampp\htdocs\projectData\document-generator-system\frontend\widgets\project_selection_window.py", line 527, in <lambda>
+    access_btn.clicked.connect(lambda checked, p=proyecto: self.open_project(p))
+                                                           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp\htdocs\projectData\document-generator-system\frontend\widgets\project_selection_window.py", line 576, in open_project
+    self.project_window = ProjectWindow(proyecto, self.user_info)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp\htdocs\projectData\document-generator-system\frontend\widgets\project_window.py", line 48, in __init__
+    self.init_ui()
+  File "C:\xampp\htdocs\projectData\document-generator-system\frontend\widgets\project_window.py", line 72, in init_ui
+    self.create_tabs()
+  File "C:\xampp\htdocs\projectData\document-generator-system\frontend\widgets\project_window.py", line 335, in create_tabs
+    from ..views.templates_view import TemplatesView
+ImportError: attempted relative import beyond top-level package
+2026-01-27 16:39:02,897 - __main__ - CRITICAL - Excepción no capturada
+Traceback (most recent call last):
+  File "C:\xampp\htdocs\projectData\document-generator-system\frontend\widgets\project_selection_window.py", line 527, in <lambda>
+    access_btn.clicked.connect(lambda checked, p=proyecto: self.open_project(p))
+                                                           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp\htdocs\projectData\document-generator-system\frontend\widgets\project_selection_window.py", line 576, in open_project
+    self.project_window = ProjectWindow(proyecto, self.user_info)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp\htdocs\projectData\document-generator-system\frontend\widgets\project_window.py", line 48, in __init__
+    self.init_ui()
+  File "C:\xampp\htdocs\projectData\document-generator-system\frontend\widgets\project_window.py", line 72, in init_ui
+    self.create_tabs()
+  File "C:\xampp\htdocs\projectData\document-generator-system\frontend\widgets\project_window.py", line 335, in create_tabs
+    from ..views.templates_view import TemplatesView
+ImportError: attempted relative import beyond top-level package
+2026-01-27 16:50:24,288 - utils.api_client - WARNING - Credenciales inválidas para superadmin
+2026-01-27 16:50:29,275 - utils.api_client - INFO - Login exitoso para usuario: superadmin
+2026-01-27 16:50:29,397 - __main__ - INFO - Login exitoso para usuario: superadmin
+2026-01-27 16:55:40,438 - __main__ - CRITICAL - Excepción no capturada
+Traceback (most recent call last):
+  File "C:\xampp\htdocs\projectData\document-generator-system\frontend\widgets\project_selection_window.py", line 527, in <lambda>
+    access_btn.clicked.connect(lambda checked, p=proyecto: self.open_project(p))
+                                                           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp\htdocs\projectData\document-generator-system\frontend\widgets\project_selection_window.py", line 576, in open_project
+    self.project_window = ProjectWindow(proyecto, self.user_info)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp\htdocs\projectData\document-generator-system\frontend\widgets\project_window.py", line 48, in __init__
+    self.init_ui()
+  File "C:\xampp\htdocs\projectData\document-generator-system\frontend\widgets\project_window.py", line 72, in init_ui
+    self.create_tabs()
+  File "C:\xampp\htdocs\projectData\document-generator-system\frontend\widgets\project_window.py", line 335, in create_tabs
+    from ..views.templates_view import TemplatesView
+ImportError: attempted relative import beyond top-level package

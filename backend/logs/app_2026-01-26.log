@@ -1,0 +1,56 @@
+2026-01-26 10:13:21.586 | INFO     | app.main:lifespan:26 | Iniciando aplicación...
+2026-01-26 10:13:21.587 | INFO     | app.main:lifespan:27 | Nombre: PDF Generation System
+2026-01-26 10:13:21.588 | INFO     | app.main:lifespan:28 | Entorno: development
+2026-01-26 10:15:21.628 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/login | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-26 10:15:21.633 | INFO     | app.api.v1.auth:login:36 | Intento de login desde IP: 127.0.0.1, User-Agent: Combinación de Correspondencia/1.0.0
+2026-01-26 10:15:21.634 | INFO     | app.auth:authenticate_user:87 | Intentando autenticar usuario: superadmin
+2026-01-26 10:15:22.210 | WARNING  | app.auth:authenticate_user:100 | Contraseña incorrecta para usuario: superadmin
+2026-01-26 10:15:22.232 | WARNING  | app.auth:register_failed_login:144 | Intento fallido de login para usuario: superadmin, IP: 127.0.0.1
+2026-01-26 10:15:22.233 | WARNING  | app.api.v1.auth:login:44 | Login fallido para usuario: superadmin
+2026-01-26 10:15:22.235 | INFO     | app.main:log_requests:84 | Response: 401 | Tiempo: 0.607s
+2026-01-26 10:15:26.808 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/login | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-26 10:15:26.811 | INFO     | app.api.v1.auth:login:36 | Intento de login desde IP: 127.0.0.1, User-Agent: Combinación de Correspondencia/1.0.0
+2026-01-26 10:15:26.811 | INFO     | app.auth:authenticate_user:87 | Intentando autenticar usuario: superadmin
+2026-01-26 10:15:27.298 | INFO     | app.auth:authenticate_user:103 | Usuario autenticado exitosamente: superadmin
+2026-01-26 10:15:27.583 | INFO     | app.auth:update_last_login:126 | Último login actualizado para usuario: superadmin
+2026-01-26 10:15:27.592 | DEBUG    | app.auth:create_access_token:46 | Token de acceso creado para superadmin, expira: 2026-01-27 16:15:27.584579
+2026-01-26 10:15:27.592 | DEBUG    | app.auth:create_refresh_token:60 | Token de refresh creado para superadmin, expira: 2026-02-02 16:15:27.592572
+2026-01-26 10:15:27.593 | INFO     | app.api.v1.auth:login:62 | Login exitoso para usuario: superadmin
+2026-01-26 10:15:27.594 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.786s
+2026-01-26 10:15:27.599 | INFO     | app.main:log_requests:75 | Request: GET http://localhost:8000/api/v1/auth/me | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-26 10:15:27.696 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.097s
+2026-01-26 10:15:27.704 | INFO     | app.main:log_requests:75 | Request: GET http://localhost:8000/api/v1/auth/me | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-26 10:15:27.813 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.109s
+2026-01-26 10:15:28.097 | INFO     | app.main:log_requests:75 | Request: GET http://localhost:8000/api/v1/projects/?skip=0&limit=100 | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-26 10:15:28.345 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.248s
+2026-01-26 10:16:08.971 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-26 10:16:09.100 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.128s
+2026-01-26 10:17:08.976 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-26 10:17:09.129 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.153s
+2026-01-26 10:18:04.239 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/projects/ | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-26 10:18:04.353 | INFO     | app.api.v1.projects:crear_proyecto:42 | Creando nuevo proyecto: IPEJAL
+2026-01-26 10:18:04.530 | ERROR    | app.core.padron_manager:create_padron_table:101 | Error creando tabla de padrón: (psycopg2.errors.DuplicateColumn) la columna «tipo_prestamo» fue especificada más de una vez
+
+[SQL: 
+        CREATE TABLE IF NOT EXISTS padron_completo_b2bcc503 (
+            id SERIAL PRIMARY KEY, cuenta VARCHAR(255) NOT NULL UNIQUE, estatus_prestamo VARCHAR(255), estatus_captura VARCHAR(255), num_convenio VARCHAR(255), fecha_convenio VARCHAR(255), orden_zona VARCHAR(255), zonas_afiliado VARCHAR(255), zona_aval VARCHAR(255), zona_garantia VARCHAR(255), tipo_prestamo VARCHAR(255), cobranza VARCHAR(255), demanda VARCHAR(255), juzgado VARCHAR(255), expediente VARCHAR(255), estatus_para_despacho VARCHAR(255), juicio_caduca VARCHAR(255), afiliado VARCHAR(255), nombre VARCHAR(255) NOT NULL, rfc VARCHAR(255), tipo_prestamo VARCHAR(255), prestamo VARCHAR(255), saldo_por_vencer VARCHAR(255), adeudo VARCHAR(255), liquidacion VARCHAR(255), moratorio VARCHAR(255), ultimo_abono VARCHAR(255), ultimo_abono_modificado VARCHAR(255), subestatus VARCHAR(255), sub_estatus_id VARCHAR(255), estatus VARCHAR(255), dependencia VARCHAR(255), alta VARCHAR(255), ultima_aportacion VARCHAR(255), afiliado_coordenadas VARCHAR(255), lat VARCHAR(255), lon VARCHAR(255), afiliado_calle VARCHAR(255), afiliado_exterior VARCHAR(255), afiliado_interior VARCHAR(255), domicilio VARCHAR(255), afiliado_cruza1 VARCHAR(255), afiliado_cruza2 VARCHAR(255), afiliado_colonia VARCHAR(255), afiliado_poblacion VARCHAR(255), afiliado_municipio VARCHAR(255), afiliado_cp VARCHAR(255), afiliado_lada VARCHAR(255), afiliado_telefono VARCHAR(255), afiliado_celular VARCHAR(255), aval_codigo VARCHAR(255), aval VARCHAR(255), aval_calle VARCHAR(255), aval_exterior VARCHAR(255), aval_interior VARCHAR(255), aval_cruza1 VARCHAR(255), aval_cruza2 VARCHAR(255), aval_colonia VARCHAR(255), aval_poblacion VARCHAR(255), aval_municipio VARCHAR(255), aval_cp VARCHAR(255), aval_lada VARCHAR(255), aval_telefono VARCHAR(255), aval_celular VARCHAR(255), garantia_direccion VARCHAR(255), garantia_colonia VARCHAR(255), garantia_calles_cruza VARCHAR(255), garantia_poblacion VARCHAR(255), garantia_municipio VARCHAR(255), fecha_asignacion VARCHAR(255), observaciones VARCHAR(255), created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, is_deleted BOOLEAN DEFAULT FALSE
+        );
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-01-26 10:18:04.537 | ERROR    | app.api.v1.projects:crear_proyecto:150 | Error de base de datos al crear proyecto: (psycopg2.errors.DuplicateColumn) la columna «tipo_prestamo» fue especificada más de una vez
+
+[SQL: 
+        CREATE TABLE IF NOT EXISTS padron_completo_b2bcc503 (
+            id SERIAL PRIMARY KEY, cuenta VARCHAR(255) NOT NULL UNIQUE, estatus_prestamo VARCHAR(255), estatus_captura VARCHAR(255), num_convenio VARCHAR(255), fecha_convenio VARCHAR(255), orden_zona VARCHAR(255), zonas_afiliado VARCHAR(255), zona_aval VARCHAR(255), zona_garantia VARCHAR(255), tipo_prestamo VARCHAR(255), cobranza VARCHAR(255), demanda VARCHAR(255), juzgado VARCHAR(255), expediente VARCHAR(255), estatus_para_despacho VARCHAR(255), juicio_caduca VARCHAR(255), afiliado VARCHAR(255), nombre VARCHAR(255) NOT NULL, rfc VARCHAR(255), tipo_prestamo VARCHAR(255), prestamo VARCHAR(255), saldo_por_vencer VARCHAR(255), adeudo VARCHAR(255), liquidacion VARCHAR(255), moratorio VARCHAR(255), ultimo_abono VARCHAR(255), ultimo_abono_modificado VARCHAR(255), subestatus VARCHAR(255), sub_estatus_id VARCHAR(255), estatus VARCHAR(255), dependencia VARCHAR(255), alta VARCHAR(255), ultima_aportacion VARCHAR(255), afiliado_coordenadas VARCHAR(255), lat VARCHAR(255), lon VARCHAR(255), afiliado_calle VARCHAR(255), afiliado_exterior VARCHAR(255), afiliado_interior VARCHAR(255), domicilio VARCHAR(255), afiliado_cruza1 VARCHAR(255), afiliado_cruza2 VARCHAR(255), afiliado_colonia VARCHAR(255), afiliado_poblacion VARCHAR(255), afiliado_municipio VARCHAR(255), afiliado_cp VARCHAR(255), afiliado_lada VARCHAR(255), afiliado_telefono VARCHAR(255), afiliado_celular VARCHAR(255), aval_codigo VARCHAR(255), aval VARCHAR(255), aval_calle VARCHAR(255), aval_exterior VARCHAR(255), aval_interior VARCHAR(255), aval_cruza1 VARCHAR(255), aval_cruza2 VARCHAR(255), aval_colonia VARCHAR(255), aval_poblacion VARCHAR(255), aval_municipio VARCHAR(255), aval_cp VARCHAR(255), aval_lada VARCHAR(255), aval_telefono VARCHAR(255), aval_celular VARCHAR(255), garantia_direccion VARCHAR(255), garantia_colonia VARCHAR(255), garantia_calles_cruza VARCHAR(255), garantia_poblacion VARCHAR(255), garantia_municipio VARCHAR(255), fecha_asignacion VARCHAR(255), observaciones VARCHAR(255), created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, is_deleted BOOLEAN DEFAULT FALSE
+        );
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-01-26 10:18:04.542 | INFO     | app.main:log_requests:84 | Response: 500 | Tiempo: 0.303s
+2026-01-26 10:18:06.941 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-26 10:18:07.068 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.126s
+2026-01-26 10:18:10.095 | INFO     | app.main:log_requests:75 | Request: GET http://localhost:8000/api/v1/projects/?skip=0&limit=100 | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-26 10:18:10.262 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.167s
+2026-01-26 10:18:36.420 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/logout | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-26 10:18:36.772 | INFO     | app.api.v1.auth:logout:158 | Logout exitoso para usuario: superadmin
+2026-01-26 10:18:36.773 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.352s
+2026-01-26 11:56:20.198 | INFO     | app.main:lifespan:33 | Apagando aplicación...

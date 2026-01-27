@@ -1,0 +1,187 @@
+2026-01-27 16:04:57.041 | INFO     | app.main:lifespan:26 | Iniciando aplicación...
+2026-01-27 16:04:57.043 | INFO     | app.main:lifespan:27 | Nombre: PDF Generation System
+2026-01-27 16:04:57.043 | INFO     | app.main:lifespan:28 | Entorno: development
+2026-01-27 16:06:06.086 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/login | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:06:06.091 | INFO     | app.api.v1.auth:login:36 | Intento de login desde IP: 127.0.0.1, User-Agent: Combinación de Correspondencia/1.0.0
+2026-01-27 16:06:06.093 | INFO     | app.auth:authenticate_user:87 | Intentando autenticar usuario: superadmin
+2026-01-27 16:06:06.803 | INFO     | app.auth:authenticate_user:103 | Usuario autenticado exitosamente: superadmin
+2026-01-27 16:06:07.085 | INFO     | app.auth:update_last_login:126 | Último login actualizado para usuario: superadmin
+2026-01-27 16:06:07.132 | DEBUG    | app.auth:create_access_token:46 | Token de acceso creado para superadmin, expira: 2026-01-28 22:06:07.086052
+2026-01-27 16:06:07.133 | DEBUG    | app.auth:create_refresh_token:60 | Token de refresh creado para superadmin, expira: 2026-02-03 22:06:07.133376
+2026-01-27 16:06:07.134 | INFO     | app.api.v1.auth:login:62 | Login exitoso para usuario: superadmin
+2026-01-27 16:06:07.139 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 1.053s
+2026-01-27 16:06:07.145 | INFO     | app.main:log_requests:75 | Request: GET http://localhost:8000/api/v1/auth/me | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:06:07.251 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.106s
+2026-01-27 16:06:07.258 | INFO     | app.main:log_requests:75 | Request: GET http://localhost:8000/api/v1/auth/me | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:06:07.367 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.109s
+2026-01-27 16:06:07.599 | INFO     | app.main:log_requests:75 | Request: GET http://localhost:8000/api/v1/projects/?skip=0&limit=100 | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:06:07.742 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.143s
+2026-01-27 16:06:51.995 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:06:52.102 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.107s
+2026-01-27 16:07:52.001 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:07:52.105 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.104s
+2026-01-27 16:08:42.244 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/projects/ | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:08:42.445 | INFO     | app.api.v1.projects:crear_proyecto:42 | Creando nuevo proyecto: IPEJAL
+2026-01-27 16:08:42.749 | INFO     | app.core.padron_manager:create_padron_table:97 | Tabla de padrón creada: padron_completo_6d9d3565
+2026-01-27 16:08:43.085 | INFO     | app.api.v1.projects:crear_proyecto:142 | Proyecto creado exitosamente: IPEJAL (ID: 1)
+2026-01-27 16:08:43.098 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.855s
+2026-01-27 16:08:43.154 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/projects/1/cargar-padron | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:08:43.304 | WARNING  | app.main:validation_exception_handler:98 | Validación fallida: [{'type': 'missing', 'loc': ('body', 'archivo'), 'msg': 'Field required', 'input': None, 'url': 'https://errors.pydantic.dev/2.5/v/missing'}]
+2026-01-27 16:08:43.310 | ERROR    | app.main:log_requests:80 | Error procesando request: Object of type FormData is not JSON serializable
+2026-01-27 16:08:43.323 | ERROR    | app.main:global_exception_handler:111 | Error no manejado: Object of type FormData is not JSON serializable
+2026-01-27 16:08:52.006 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:08:52.213 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.207s
+2026-01-27 16:09:36.854 | INFO     | app.main:log_requests:75 | Request: GET http://localhost:8000/api/v1/projects/?skip=0&limit=100 | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:09:36.992 | ERROR    | app.main:log_requests:80 | Error procesando request: Unable to serialize unknown type: <class 'app.models.Proyecto'>
+2026-01-27 16:09:36.994 | ERROR    | app.main:global_exception_handler:111 | Error no manejado: Unable to serialize unknown type: <class 'app.models.Proyecto'>
+2026-01-27 16:09:51.964 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:09:52.089 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.125s
+2026-01-27 16:10:51.991 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:10:52.130 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.139s
+2026-01-27 16:11:51.997 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:11:52.118 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.121s
+2026-01-27 16:12:00.888 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/logout | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:12:01.179 | INFO     | app.api.v1.auth:logout:158 | Logout exitoso para usuario: superadmin
+2026-01-27 16:12:01.182 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.294s
+2026-01-27 16:18:03.120 | INFO     | app.main:lifespan:26 | Iniciando aplicación...
+2026-01-27 16:18:03.122 | INFO     | app.main:lifespan:27 | Nombre: PDF Generation System
+2026-01-27 16:18:03.122 | INFO     | app.main:lifespan:28 | Entorno: development
+2026-01-27 16:19:45.594 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/login | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:19:45.613 | INFO     | app.api.v1.auth:login:36 | Intento de login desde IP: 127.0.0.1, User-Agent: Combinación de Correspondencia/1.0.0
+2026-01-27 16:19:45.622 | INFO     | app.auth:authenticate_user:87 | Intentando autenticar usuario: superadmin
+2026-01-27 16:19:46.274 | INFO     | app.auth:authenticate_user:103 | Usuario autenticado exitosamente: superadmin
+2026-01-27 16:19:46.566 | INFO     | app.auth:update_last_login:126 | Último login actualizado para usuario: superadmin
+2026-01-27 16:19:46.572 | DEBUG    | app.auth:create_access_token:46 | Token de acceso creado para superadmin, expira: 2026-01-28 22:19:46.567214
+2026-01-27 16:19:46.573 | DEBUG    | app.auth:create_refresh_token:60 | Token de refresh creado para superadmin, expira: 2026-02-03 22:19:46.573213
+2026-01-27 16:19:46.573 | INFO     | app.api.v1.auth:login:62 | Login exitoso para usuario: superadmin
+2026-01-27 16:19:46.575 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.982s
+2026-01-27 16:19:46.582 | INFO     | app.main:log_requests:75 | Request: GET http://localhost:8000/api/v1/auth/me | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:19:46.704 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.122s
+2026-01-27 16:19:46.711 | INFO     | app.main:log_requests:75 | Request: GET http://localhost:8000/api/v1/auth/me | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:19:46.827 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.116s
+2026-01-27 16:19:46.930 | INFO     | app.main:log_requests:75 | Request: GET http://localhost:8000/api/v1/projects/?skip=0&limit=100 | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:19:47.212 | ERROR    | app.main:log_requests:80 | Error procesando request: Unable to serialize unknown type: <class 'app.models.Proyecto'>
+2026-01-27 16:19:47.228 | ERROR    | app.main:global_exception_handler:111 | Error no manejado: Unable to serialize unknown type: <class 'app.models.Proyecto'>
+2026-01-27 16:20:19.601 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:20:19.710 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.109s
+2026-01-27 16:21:19.604 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:21:19.810 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.206s
+2026-01-27 16:22:19.637 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:22:19.746 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.109s
+2026-01-27 16:23:19.648 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:23:19.774 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.126s
+2026-01-27 16:24:19.633 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:24:19.745 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.112s
+2026-01-27 16:25:19.645 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:25:19.859 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.215s
+2026-01-27 16:26:19.634 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:26:19.762 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.128s
+2026-01-27 16:27:19.637 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:27:19.781 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.143s
+2026-01-27 16:28:19.662 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:28:19.797 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.135s
+2026-01-27 16:29:19.655 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:29:19.905 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.251s
+2026-01-27 16:30:19.651 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:30:19.822 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.172s
+2026-01-27 16:31:19.654 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:31:19.769 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.114s
+2026-01-27 16:32:19.658 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:32:19.764 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.107s
+2026-01-27 16:33:19.655 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:33:19.761 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.106s
+2026-01-27 16:34:19.667 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:34:19.790 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.122s
+2026-01-27 16:35:19.646 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:35:19.754 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.108s
+2026-01-27 16:35:53.605 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/logout | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:35:53.910 | INFO     | app.api.v1.auth:logout:158 | Logout exitoso para usuario: superadmin
+2026-01-27 16:35:53.914 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.309s
+2026-01-27 16:36:22.031 | INFO     | app.main:lifespan:33 | Apagando aplicación...
+2026-01-27 16:36:30.499 | INFO     | app.main:lifespan:26 | Iniciando aplicación...
+2026-01-27 16:36:30.503 | INFO     | app.main:lifespan:27 | Nombre: PDF Generation System
+2026-01-27 16:36:30.504 | INFO     | app.main:lifespan:28 | Entorno: development
+2026-01-27 16:37:16.580 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/login | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:37:16.589 | INFO     | app.api.v1.auth:login:36 | Intento de login desde IP: 127.0.0.1, User-Agent: Combinación de Correspondencia/1.0.0
+2026-01-27 16:37:16.591 | INFO     | app.auth:authenticate_user:87 | Intentando autenticar usuario: superadmin
+2026-01-27 16:37:17.220 | INFO     | app.auth:authenticate_user:103 | Usuario autenticado exitosamente: superadmin
+2026-01-27 16:37:17.577 | INFO     | app.auth:update_last_login:126 | Último login actualizado para usuario: superadmin
+2026-01-27 16:37:17.583 | DEBUG    | app.auth:create_access_token:46 | Token de acceso creado para superadmin, expira: 2026-01-28 22:37:17.578503
+2026-01-27 16:37:17.583 | DEBUG    | app.auth:create_refresh_token:60 | Token de refresh creado para superadmin, expira: 2026-02-03 22:37:17.583502
+2026-01-27 16:37:17.583 | INFO     | app.api.v1.auth:login:62 | Login exitoso para usuario: superadmin
+2026-01-27 16:37:17.588 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 1.008s
+2026-01-27 16:37:17.592 | INFO     | app.main:log_requests:75 | Request: GET http://localhost:8000/api/v1/auth/me | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:37:17.715 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.123s
+2026-01-27 16:37:17.727 | INFO     | app.main:log_requests:75 | Request: GET http://localhost:8000/api/v1/auth/me | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:37:17.849 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.122s
+2026-01-27 16:37:17.963 | INFO     | app.main:log_requests:75 | Request: GET http://localhost:8000/api/v1/projects/?skip=0&limit=100 | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:37:18.134 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.171s
+2026-01-27 16:38:09.830 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:38:09.956 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.126s
+2026-01-27 16:38:34.994 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/projects/ | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:38:35.261 | INFO     | app.api.v1.projects:crear_proyecto:42 | Creando nuevo proyecto: IPEJOL
+2026-01-27 16:38:35.675 | INFO     | app.core.padron_manager:create_padron_table:97 | Tabla de padrón creada: padron_completo_955bd208
+2026-01-27 16:38:35.964 | INFO     | app.api.v1.projects:crear_proyecto:142 | Proyecto creado exitosamente: IPEJOL (ID: 2)
+2026-01-27 16:38:35.965 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.971s
+2026-01-27 16:38:36.014 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/projects/2/cargar-padron | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:38:36.216 | WARNING  | app.main:validation_exception_handler:98 | Validación fallida: [{'type': 'missing', 'loc': ('body', 'archivo'), 'msg': 'Field required', 'input': None, 'url': 'https://errors.pydantic.dev/2.5/v/missing'}]
+2026-01-27 16:38:36.223 | ERROR    | app.main:log_requests:80 | Error procesando request: Object of type FormData is not JSON serializable
+2026-01-27 16:38:36.226 | ERROR    | app.main:global_exception_handler:111 | Error no manejado: Object of type FormData is not JSON serializable
+2026-01-27 16:38:50.910 | INFO     | app.main:log_requests:75 | Request: GET http://localhost:8000/api/v1/projects/1 | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:38:51.058 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.148s
+2026-01-27 16:38:51.148 | INFO     | app.main:log_requests:75 | Request: GET http://localhost:8000/api/v1/projects/1/padron/estructura | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:38:52.326 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 1.178s
+2026-01-27 16:38:56.355 | INFO     | app.main:log_requests:75 | Request: GET http://localhost:8000/api/v1/projects/?skip=0&limit=100 | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:38:56.528 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.173s
+2026-01-27 16:39:07.956 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/logout | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:39:08.212 | INFO     | app.api.v1.auth:logout:158 | Logout exitoso para usuario: superadmin
+2026-01-27 16:39:08.213 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.257s
+2026-01-27 16:39:10.645 | INFO     | app.main:lifespan:33 | Apagando aplicación...
+2026-01-27 16:47:34.867 | INFO     | app.main:lifespan:26 | Iniciando aplicación...
+2026-01-27 16:47:34.869 | INFO     | app.main:lifespan:27 | Nombre: PDF Generation System
+2026-01-27 16:47:34.869 | INFO     | app.main:lifespan:28 | Entorno: development
+2026-01-27 16:50:23.586 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/login | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:50:23.590 | INFO     | app.api.v1.auth:login:36 | Intento de login desde IP: 127.0.0.1, User-Agent: Combinación de Correspondencia/1.0.0
+2026-01-27 16:50:23.591 | INFO     | app.auth:authenticate_user:87 | Intentando autenticar usuario: superadmin
+2026-01-27 16:50:24.265 | WARNING  | app.auth:authenticate_user:100 | Contraseña incorrecta para usuario: superadmin
+2026-01-27 16:50:24.277 | WARNING  | app.auth:register_failed_login:144 | Intento fallido de login para usuario: superadmin, IP: 127.0.0.1
+2026-01-27 16:50:24.281 | WARNING  | app.api.v1.auth:login:44 | Login fallido para usuario: superadmin
+2026-01-27 16:50:24.283 | INFO     | app.main:log_requests:84 | Response: 401 | Tiempo: 0.697s
+2026-01-27 16:50:28.375 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/login | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:50:28.377 | INFO     | app.api.v1.auth:login:36 | Intento de login desde IP: 127.0.0.1, User-Agent: Combinación de Correspondencia/1.0.0
+2026-01-27 16:50:28.378 | INFO     | app.auth:authenticate_user:87 | Intentando autenticar usuario: superadmin
+2026-01-27 16:50:28.877 | INFO     | app.auth:authenticate_user:103 | Usuario autenticado exitosamente: superadmin
+2026-01-27 16:50:29.123 | INFO     | app.auth:update_last_login:126 | Último login actualizado para usuario: superadmin
+2026-01-27 16:50:29.129 | DEBUG    | app.auth:create_access_token:46 | Token de acceso creado para superadmin, expira: 2026-01-28 22:50:29.124657
+2026-01-27 16:50:29.130 | DEBUG    | app.auth:create_refresh_token:60 | Token de refresh creado para superadmin, expira: 2026-02-03 22:50:29.129585
+2026-01-27 16:50:29.130 | INFO     | app.api.v1.auth:login:62 | Login exitoso para usuario: superadmin
+2026-01-27 16:50:29.132 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.757s
+2026-01-27 16:50:29.138 | INFO     | app.main:log_requests:75 | Request: GET http://localhost:8000/api/v1/auth/me | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:50:29.272 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.133s
+2026-01-27 16:50:29.280 | INFO     | app.main:log_requests:75 | Request: GET http://localhost:8000/api/v1/auth/me | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:50:29.395 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.116s
+2026-01-27 16:50:29.506 | INFO     | app.main:log_requests:75 | Request: GET http://localhost:8000/api/v1/projects/?skip=0&limit=100 | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:50:29.752 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.246s
+2026-01-27 16:51:16.777 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:51:16.887 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.110s
+2026-01-27 16:52:16.802 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:52:16.913 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.110s
+2026-01-27 16:52:35.654 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/projects/ | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:52:35.759 | INFO     | app.api.v1.projects:crear_proyecto:42 | Creando nuevo proyecto: IPOJUL
+2026-01-27 16:52:35.891 | INFO     | app.core.padron_manager:create_padron_table:97 | Tabla de padrón creada: padron_completo_6a0bb3e8
+2026-01-27 16:52:36.023 | INFO     | app.api.v1.projects:crear_proyecto:142 | Proyecto creado exitosamente: IPOJUL (ID: 3)
+2026-01-27 16:52:36.025 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.371s
+2026-01-27 16:52:36.062 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/projects/3/cargar-padron | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:52:36.304 | WARNING  | app.main:validation_exception_handler:98 | Validación fallida: [{'type': 'missing', 'loc': ('body', 'archivo'), 'msg': 'Field required', 'input': None, 'url': 'https://errors.pydantic.dev/2.5/v/missing'}]
+2026-01-27 16:52:36.308 | INFO     | app.main:log_requests:84 | Response: 422 | Tiempo: 0.246s
+2026-01-27 16:52:54.924 | INFO     | app.main:log_requests:75 | Request: GET http://localhost:8000/api/v1/projects/?skip=0&limit=100 | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:52:55.568 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.644s
+2026-01-27 16:53:16.803 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:53:16.911 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.108s
+2026-01-27 16:54:16.794 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:54:16.897 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.103s
+2026-01-27 16:55:16.791 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/validate-token | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:55:16.903 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.111s
+2026-01-27 16:55:48.639 | INFO     | app.main:log_requests:75 | Request: POST http://localhost:8000/api/v1/auth/logout | IP: 127.0.0.1 | UA: Combinación de Correspondencia/1.0.0
+2026-01-27 16:55:48.943 | INFO     | app.api.v1.auth:logout:158 | Logout exitoso para usuario: superadmin
+2026-01-27 16:55:48.945 | INFO     | app.main:log_requests:84 | Response: 200 | Tiempo: 0.306s

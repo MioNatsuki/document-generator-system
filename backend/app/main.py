@@ -97,9 +97,13 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
     """
     logger.warning(f"Validación fallida: {exc.errors()}")
     
+    body = exc.body
+    if hasattr(body, '__class__') and 'FormData' in str(body.__class__):
+        body = "FormData (no serializable como JSON)"
+    
     return JSONResponse(
         status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-        content={"detail": exc.errors(), "body": exc.body},
+        content={"detail": exc.errors(), "body": body},
     )
 
 
